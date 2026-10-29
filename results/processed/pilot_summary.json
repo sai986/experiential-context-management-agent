@@ -1,0 +1,62 @@
+{
+  "summary": {
+    "full_context": {
+      "n": 5,
+      "success_rate": 1.0,
+      "avg_constraint_satisfaction": 1.0,
+      "avg_active_context_tokens": 50.6
+    },
+    "fixed_compression": {
+      "n": 5,
+      "success_rate": 0.0,
+      "avg_constraint_satisfaction": 0.0,
+      "avg_active_context_tokens": 40.0
+    },
+    "non_learning_manager": {
+      "n": 5,
+      "success_rate": 0.0,
+      "avg_constraint_satisfaction": 0.0,
+      "avg_active_context_tokens": 25.4
+    },
+    "attributed_lesson_manager": {
+      "n": 5,
+      "success_rate": 1.0,
+      "avg_constraint_satisfaction": 1.0,
+      "avg_active_context_tokens": 32.4
+    }
+  },
+  "learned_lessons": [
+    {
+      "lesson_id": "lesson_0001",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "trigger_tags": [
+        "critical",
+        "delayed_dependency",
+        "negation"
+      ],
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "supporting_decision_id": "dec_0002",
+      "original_score": 0.0,
+      "counterfactual_score": 1.0,
+      "status": "validated"
+    },
+    {
+      "lesson_id": "lesson_0002",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "trigger_tags": [
+        "critical",
+        "hard_constraint",
+        "negation"
+      ],
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "supporting_decision_id": "dec_0001",
+      "original_score": 0.0,
+      "counterfactual_score": 1.0,
+      "status": "validated"
+    }
+  ],
+  "num_training_replays": 20,
+  "num_harmful_replays": 16
+}
