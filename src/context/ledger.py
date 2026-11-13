@@ -62,8 +62,8 @@ class ContextLedger:
             lines.append(f"[{item.item_id}] {item.content}")
         return "\n".join(lines)
 
-    def token_estimate(self) -> int:
-        # Simple reproducible approximation for pilot reporting.
+    def word_estimate(self) -> int:
+        # Word count used as a reproducible proxy for token count.
         return max(1, len(self.active_context().split()))
 
     def record_decision(
@@ -87,13 +87,13 @@ class ContextLedger:
             output_content=output_content,
             rationale=rationale,
             active_tokens_before=tokens_before,
-            active_tokens_after=self.token_estimate(),
+            active_tokens_after=self.word_estimate(),
         )
         self.decisions.append(decision)
         return decision
 
     def compress_item(self, item_id: str, output_content: str, rationale: str, step: int) -> ManagementDecision:
-        tokens_before = self.token_estimate()
+        tokens_before = self.word_estimate()
         original = self.items[item_id]
         original.active = False
         original.archived = True
@@ -105,7 +105,7 @@ class ContextLedger:
             step=original.step,
             content=output_content,
             source="context_manager",
-            tags=[tag for tag in original.tags if tag != "critical"],
+            tags=list(original.tags),
             immutable=False,
             active=True,
             archived=False,
@@ -115,13 +115,20 @@ class ContextLedger:
         return self.record_decision(step, "COMPRESS", [item_id], view_id, output_content, rationale, tokens_before)
 
     def archive_item(self, item_id: str, rationale: str, step: int) -> ManagementDecision:
-        tokens_before = self.token_estimate()
+        tokens_before = self.word_estimate()
         self.items[item_id].active = False
         self.items[item_id].archived = True
         return self.record_decision(step, "ARCHIVE", [item_id], None, None, rationale, tokens_before)
 
+    def unarchive_item(self, item_id: str, rationale: str, step: int) -> ManagementDecision:
+        # Used by the replay engine to undo an ARCHIVE decision.
+        tokens_before = self.word_estimate()
+        self.items[item_id].active = True
+        self.items[item_id].archived = False
+        return self.record_decision(step, "UNARCHIVE", [item_id], item_id, self.items[item_id].content, rationale, tokens_before)
+
     def keep_item(self, item_id: str, rationale: str, step: int) -> ManagementDecision:
-        tokens_before = self.token_estimate()
+        tokens_before = self.word_estimate()
         self.items[item_id].active = True
         return self.record_decision(step, "KEEP", [item_id], item_id, self.items[item_id].content, rationale, tokens_before)
 
@@ -130,7 +137,7 @@ class ContextLedger:
         if not compressed.parent_item_ids:
             return None
         original_id = compressed.parent_item_ids[0]
-        tokens_before = self.token_estimate()
+        tokens_before = self.word_estimate()
         compressed.active = False
         compressed.archived = True
         original = self.items[original_id]

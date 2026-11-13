@@ -6,3 +6,13 @@ __pycache__/
 venv/
 .env
 papers_read/*.pdf
+
+# Generated experiment outputs — large, reproducible, not for version control.
+results/incident/raw/
+results/incident/processed/
+results/raw/
+results/processed/
+
+# Generated task data — reproducible from task_generator scripts.
+data/incident/
+data/controlled/
