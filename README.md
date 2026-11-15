@@ -47,7 +47,7 @@ Every rule in the lesson store was generated automatically through counterfactua
    re-runs the task agent
 4. Score improves from 0 to 1 -> causal proof that the compression caused the failure
 5. Rule created: "COMPRESS on [critical, negation] = harmful"
-6. Rule confirmed independently 5+ more times across different episodes
+6. Rule confirmed independently 4+ more times across different episodes (5+ total)
 7. Rule promoted to transferable and given to Agent B, which never saw those episodes
 8. Agent B succeeds on new tasks it has never seen, guided only by the transferred rule
 ```
@@ -71,16 +71,6 @@ This project is best understood through the lens of **Case-Based Reasoning (CBR)
 The cross-agent transfer component (RQ3) aligns with **continual and lifelong learning** (Thrun, 1996; Ring, 1994). Agent A accumulates lessons over a training distribution. The most strongly confirmed lessons (transferable threshold: 5+ independent confirmations) are handed to Agent B. Agent B benefits from Agent A's experience without inheriting task-specific overfitting, because the lessons are tag-pattern rules rather than model weight updates. This is **transfer via distilled symbolic rules**, not weight sharing or fine-tuning.
 
 **Compared to related work:** MemGPT (Packer et al., 2023) uses fixed heuristics with no learning. StreamingLLM (Xiao et al., 2024) handles streaming context via attention sinks but applies no learning. Reflexion (Shinn et al., 2023) learns from failures but its lessons target the task agent's behaviour, not the context manager's retention policy. AdaCoM (Lu et al., arXiv:2605.30785, 2026) learns context manager policy through RL weight updates, requiring GPU training; this project achieves the same goal through structured text rules with no parameter updates. ACON (Kang et al., ICML 2026) refines compression guidelines from failure analysis but covers only the compression operation and no cross-agent transfer.
-
----
-
-## Research Questions
-
-| RQ | Question |
-|----|----------|
-| RQ1 | Does lesson learning improve task success over a non-learning baseline? |
-| RQ2 | Does the lesson-aware manager preserve performance while reducing active context words? |
-| RQ3 | Do lessons transfer to a fresh agent (Agent B) that never saw the training tasks? |
 
 ---
 
@@ -165,18 +155,7 @@ A human-readable **Analysis Report** is printed to the terminal at the end of ev
 | `negation_critical` | 13 (5 + 8 noise) | Constraint expressed as a negation ("do not use X") must survive compression |
 | `synonym_match` | 13 (5 + 8 noise) | Required term has an acceptable synonym; the evaluator checks both |
 
-8 background `info`-tagged noise observations are injected per task to simulate a realistic Kafka/Splunk stream. The 70/30 train/test split gives 125 training tasks (Phase 1) and 55 test tasks (Phase 2 + 3).
-
----
-
-## Experiment Conditions
-
-| Condition | Description |
-|-----------|-------------|
-| `full_context` | No compression - all observations kept verbatim (ceiling) |
-| `non_learning_manager` | Archives distractors and compresses old items; no lessons (baseline) |
-| `lesson_aware_agent_a` | Agent A with lessons learned from Phase 1 training failures |
-| `lesson_aware_agent_b` | Fresh Agent B seeded with Agent A's 4 transferable lessons |
+Each task injects 8 background `info`-tagged noise observations to simulate a realistic Kafka/Splunk stream.
 
 ---
 
@@ -188,7 +167,6 @@ A human-readable **Analysis Report** is printed to the terminal at the end of ev
 - **Tag-based retrieval:** set intersection over `trigger_tags`, fully deterministic - no vectors, no embeddings, no extra API calls. Any score change is 100% attributable to the manager's decision.
 - **`temperature=0.0`:** all LLM calls are deterministic within a single model snapshot.
 - **Frozen task agent:** the task agent's weights are never updated. Any improvement in success rate is caused solely by the context manager.
-- **Lesson store persistence:** the store is serialised to `results/incident/raw/lesson_store_a.json` after Phase 1. Re-running loads the saved store and skips Phase 1. Delete the file to force a full retrain.
 
 ---
 
