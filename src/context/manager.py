@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from src.constants import OP_ARCHIVE, OP_COMPRESS, TAG_DISTRACTOR, TAG_TRIGGER
+from src.constants import MODEL_COMPRESSION, OP_ARCHIVE, OP_COMPRESS, TAG_DISTRACTOR, TAG_INFO, TAG_TRIGGER
 from src.context.ledger import ContextLedger
 from src.lessons.lesson_store import LessonStore
 
@@ -15,8 +15,8 @@ def risky_compression(content: str) -> str:
 def intelligent_compression(content: str, model_client) -> str:
     """LLM-based compression that preserves critical details.
 
-    Asks the model to summarise in one sentence while keeping negations,
-    exact numbers, hard constraints, and deadlines verbatim.
+    Uses MODEL_COMPRESSION (Haiku) via a per-call model override — cheaper
+    than the default Sonnet model for simple one-sentence summarisation.
 
     Falls back to risky_compression if no model client is available
     (i.e. USE_LLM=0 mode).
@@ -29,7 +29,7 @@ def intelligent_compression(content: str, model_client) -> str:
         "and deadlines verbatim — do not paraphrase them.\n\n"
         f"Observation: {content}\n\nSummary:"
     )
-    return model_client.complete(prompt)
+    return model_client.complete(prompt, model=MODEL_COMPRESSION)
 
 
 class BaseManager:
@@ -64,7 +64,10 @@ class NonLearningManager(BaseManager):
         for item in list(ledger.active_items()):
             if TAG_TRIGGER in item.tags:
                 continue
-            if TAG_DISTRACTOR in item.tags and item.step <= current_step - 1:
+            if TAG_INFO in item.tags:
+                # Production-stream noise — always archive immediately.
+                ledger.archive_item(item.item_id, "Archive background info noise.", current_step)
+            elif TAG_DISTRACTOR in item.tags and item.step <= current_step - 1:
                 ledger.archive_item(item.item_id, "Archive stale distractor.", current_step)
             elif item.step <= current_step - 3 and item.immutable:
                 ledger.compress_item(
@@ -83,6 +86,11 @@ class LessonAwareManager(BaseManager):
     def manage_after_observation(self, ledger: ContextLedger, current_step: int) -> None:
         for item in list(ledger.active_items()):
             if TAG_TRIGGER in item.tags:
+                continue
+
+            # --- Info noise (always safe to archive — no lesson needed) ---
+            if TAG_INFO in item.tags:
+                ledger.archive_item(item.item_id, "Archive background info noise.", current_step)
                 continue
 
             # --- Archive step (most aggressive reduction) ---

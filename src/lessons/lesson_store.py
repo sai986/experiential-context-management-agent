@@ -9,11 +9,18 @@ the same pattern caused a failure:
   candidate    (1 confirmation)  - tentative, not yet used
   validated    (2+ confirmations) - used by the learning manager
   transferable (5+ confirmations) - strong enough to give to Agent B
+
+Persistence:
+  save(path) — write the full store to a JSON file so it survives restarts.
+  load(path) — reconstruct a store from that file; support_counts and statuses
+               are fully restored, so a resumed run picks up exactly where it left off.
 """
 
 from __future__ import annotations
 
+import json
 from dataclasses import asdict, dataclass
+from pathlib import Path
 
 
 # Maps status names to numeric ranks so we can compare them easily.
@@ -202,3 +209,42 @@ class LessonStore:
             row["status"]        = self._status.get(lesson.lesson_id, "candidate")
             result.append(row)
         return result
+
+    def save(self, path: Path) -> None:
+        """Write the full lesson store to a JSON file.
+
+        Saves every lesson together with its support_count and status so the
+        store can be fully reconstructed on the next run — no information lost.
+        """
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(self.to_dict(), indent=2), encoding="utf-8")
+
+    @classmethod
+    def load(cls, path: Path) -> "LessonStore":
+        """Reconstruct a LessonStore from a previously saved JSON file.
+
+        Support counts and promotion statuses are restored exactly, so a resumed
+        run behaves identically to one that ran Phase 1 from scratch.
+        """
+        store = cls()
+        rows = json.loads(path.read_text(encoding="utf-8"))
+        for row in rows:
+            lesson = Lesson(
+                lesson_id=row["lesson_id"],
+                lesson_type=row["lesson_type"],
+                operation=row["operation"],
+                trigger_tags=tuple(row["trigger_tags"]),
+                instruction=row["instruction"],
+                supporting_decision_id=row["supporting_decision_id"],
+                original_score=row["original_score"],
+                counterfactual_score=row["counterfactual_score"],
+                source_agent=row.get("source_agent", "agent_a"),
+            )
+            store.lessons.append(lesson)
+            store._support_count[lesson.lesson_id] = row["support_count"]
+            store._status[lesson.lesson_id]        = row["status"]
+            # Keep _id_counter in sync so new lessons get unique IDs if added later.
+            num = int(lesson.lesson_id.split("_")[-1])
+            if num > store._id_counter:
+                store._id_counter = num
+        return store

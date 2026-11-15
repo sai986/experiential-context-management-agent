@@ -18,31 +18,43 @@ def simulated_task_agent(task: ControlledTask, managed_context: str) -> str:
     # --- hard_constraint family ---
     if "offline" in context_lower and "cloud api" in context_lower:
         return "Use a local offline model with no cloud API."
-    if "5000 inr" in context_lower and "paid managed services" in context_lower:
-        return "Use free local tooling under 5000 INR."
-    if "exactly three bullet points" in context_lower:
-        return "Return exactly three bullet points."
+    if "under 500 usd" in context_lower or "500 usd" in context_lower:
+        return "Use free open-source tooling — zero cost, no paid SaaS required."
+    if "single json file" in context_lower or "json file" in context_lower:
+        return "Output a single JSON file — no CSV or XML."
 
     # --- delayed_dependency family ---
-    if "windows-only" in context_lower or "windows only" in context_lower:
+    if "windows server" in context_lower or "windows-only" in context_lower or "windows only" in context_lower:
         return "Use a Windows PowerShell procedure."
-    if "read-only" in context_lower:
+    if "read-only" in context_lower and "replica" in context_lower:
         return "Use a read-only backup and validation procedure."
-    if "csv file" in context_lower or ".csv" in context_lower:
-        return "Export the final artifact as a CSV .csv file."
+    if "pdf report" in context_lower or "pdf" in context_lower:
+        return "Deliver a PDF report as the final output."
 
     # --- dependency_chain family ---
-    # All four steps must be visible for the agent to find the full chain.
-    if "step 1" in context_lower and "step 4" in context_lower:
-        return "Follow all four steps in order: step 1, step 2, step 3, step 4."
-    if "step 1" in context_lower:
-        return "Follow step 1 only — later steps were not retained."
+    # All four steps must be visible for the agent to reproduce the full chain.
+    # Variant 0: Back up / Drain / dry-run / health check
+    if "back up" in context_lower and "drain" in context_lower:
+        return "Back up the configuration, Drain connections, apply with dry-run flag, re-enable after health check passes."
+    # Variant 1: Export / checksums / transformation pipeline / sign-off
+    if "export" in context_lower and "checksums" in context_lower:
+        return "Export records, validate checksums, run the transformation pipeline, promote after sign-off."
+    # Variant 2: Freeze writes / Replicate / replica lag / DNS record
+    if "freeze writes" in context_lower and "replicate" in context_lower:
+        return "Freeze writes to the shard, Replicate to new cluster, verify replica lag, switch the DNS record."
+    # Step 1 was compressed away — only later steps visible
+    if "drain" in context_lower or "checksums" in context_lower or "replica lag" in context_lower:
+        return "Incomplete procedure — the first step was lost during compression."
 
     # --- false_distractor family ---
     # The critical observation is wrongly tagged as a distractor and archived.
     # If it survived, the agent can answer correctly.
-    if "do not deploy to production" in context_lower:
-        return "Do not deploy to production — use staging only."
+    if "staging only" in context_lower or "use staging" in context_lower:
+        return "Use staging only — do not deploy to production."
+    if "second engineer" in context_lower or "reviewed by a second" in context_lower:
+        return "Require a second engineer code review before merge."
+    if "200ms" in context_lower and "synchronous" in context_lower:
+        return "Design for async processing — respond within 200ms, no synchronous external calls."
 
     # --- negation_critical family ---
     # Many variants: "must not store", "must not modify", "must not make", etc.
@@ -51,13 +63,13 @@ def simulated_task_agent(task: ControlledTask, managed_context: str) -> str:
         if "pii" in context_lower or "personally identifiable" in context_lower:
             return "Process data in-memory only — no PII stored on disk."
         if "original" in context_lower or "source file" in context_lower:
-            return "Work on a copy only — read-only source files are unmodified."
+            return "Work on a copy only — original source files are unmodified."
         if "api call" in context_lower or "3 api" in context_lower or "batch" in context_lower:
             return "Use batched requests — at most 3 API calls per task."
         return "Avoided the forbidden approach as required by the constraint."
 
     # --- synonym_match family ---
-    if "hosted" in context_lower or "cloud" in context_lower or "cloud platform" in context_lower:
+    if "hosted" in context_lower or "cloud platform" in context_lower:
         return "Deploy using a hosted cloud environment."
     if "accessible" in context_lower or "wcag" in context_lower or "a11y" in context_lower:
         return "Build an accessible interface that meets WCAG 2.1 AA standards."

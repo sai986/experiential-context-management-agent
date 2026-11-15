@@ -130,6 +130,7 @@ class ContextLedger:
     def keep_item(self, item_id: str, rationale: str, step: int) -> ManagementDecision:
         tokens_before = self.word_estimate()
         self.items[item_id].active = True
+        self.items[item_id].archived = False  # restore from archive if lesson overrides a prior ARCHIVE decision
         return self.record_decision(step, "KEEP", [item_id], item_id, self.items[item_id].content, rationale, tokens_before)
 
     def restore_original(self, compressed_item_id: str, rationale: str, step: int) -> ManagementDecision | None:

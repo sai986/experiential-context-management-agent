@@ -54,9 +54,14 @@ def _is_negated(term: str, answer_lower: str) -> bool:
 
 def evaluate_answer(task: ControlledTask, answer: str) -> EvaluationResult:
     answer_lower = answer.lower()
-    synonym_groups: list[list[str]] = getattr(task, "synonym_groups", [])
+    synonym_groups: list[list[str]] = task.synonym_groups
 
-    forbidden_found = [term for term in task.forbidden_outputs if term.lower() in answer_lower]
+    # A forbidden term is only a violation if it is NOT negated in the answer
+    # (e.g. "do not restart the database" should not trigger forbidden "restart the database").
+    forbidden_found = [
+        term for term in task.forbidden_outputs
+        if term.lower() in answer_lower and not _is_negated(term, answer_lower)
+    ]
 
     missing_required = [
         term for term in task.required_outputs

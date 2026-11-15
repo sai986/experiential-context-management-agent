@@ -31,6 +31,10 @@ TAG_TRIGGER = "trigger"
 # A user preference that informs tone but is not a hard requirement.
 TAG_PREFERENCE = "preference"
 
+# Background noise typical of a real production log stream (heartbeats,
+# metrics, debug lines). Safe to compress or archive — never critical.
+TAG_INFO = "info"
+
 # Tags that make a decision suspicious for counterfactual replay.
 SUSPECT_TAGS: frozenset[str] = frozenset({
     TAG_CRITICAL,
@@ -67,5 +71,6 @@ FAMILY_SYNONYM_MATCH      = "synonym_match"
 # Default model for all LLM calls (compression, investigation, task agent).
 MODEL_DEFAULT = "claude-sonnet-4-6"
 
-# Lighter model for compression — cheaper, still accurate for one-sentence summaries.
-MODEL_COMPRESSION = "claude-haiku-5-5"
+# Model for compression calls. Set to the same model as MODEL_DEFAULT since
+# the proxy key may only permit one model ID.
+MODEL_COMPRESSION = "claude-sonnet-4-6"

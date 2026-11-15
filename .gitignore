@@ -10,6 +10,7 @@ papers_read/*.pdf
 # Generated experiment outputs — large, reproducible, not for version control.
 results/incident/raw/
 results/incident/processed/
+results/incident/logs/
 results/raw/
 results/processed/
 

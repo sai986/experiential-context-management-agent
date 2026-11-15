@@ -68,8 +68,12 @@ class ModelClient:
             ) from exc
         return client
 
-    def complete(self, prompt: str) -> str:
+    def complete(self, prompt: str, model: str | None = None) -> str:
         """Send a prompt and return the model's text response.
+
+        Pass `model` to override the client's default for a single call —
+        used by intelligent_compression to route to the lighter Haiku model
+        without constructing a second client.
 
         Retries up to _MAX_RETRIES times with exponential backoff on API errors.
         """
@@ -78,12 +82,13 @@ class ModelClient:
                 "ModelClient called with USE_LLM=0. "
                 "Set USE_LLM=1 in your environment to enable real API calls."
             )
+        call_model = model if model is not None else self.model
         last_error: Exception | None = None
         wait = _RETRY_BASE_SECONDS
         for attempt in range(_MAX_RETRIES):
             try:
                 response = self._client.messages.create(
-                    model=self.model,
+                    model=call_model,
                     max_tokens=512,
                     temperature=0.0,
                     messages=[{"role": "user", "content": prompt}],
