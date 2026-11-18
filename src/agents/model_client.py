@@ -19,10 +19,13 @@ import time
 from src.constants import MODEL_DEFAULT
 
 # How many times to retry a failed API call before giving up.
-_MAX_RETRIES = 3
+_MAX_RETRIES = 6
 
-# Starting wait between retries (doubles each attempt: 1s, 2s, 4s).
-_RETRY_BASE_SECONDS = 1.0
+# Starting wait between retries (doubles each attempt).
+_RETRY_BASE_SECONDS = 5.0
+
+# Extra wait on 429 rate-limit responses (on top of backoff).
+_RATE_LIMIT_EXTRA_SECONDS = 30.0
 
 
 class ModelClient:
@@ -56,7 +59,6 @@ class ModelClient:
             client.messages.create(
                 model=self.model,
                 max_tokens=5,
-                temperature=0.0,
                 messages=[{"role": "user", "content": "hi"}],
             )
             print("[model_client] Connection OK — real LLM calls enabled.")
@@ -90,14 +92,15 @@ class ModelClient:
                 response = self._client.messages.create(
                     model=call_model,
                     max_tokens=512,
-                    temperature=0.0,
+                    timeout=60.0,
                     messages=[{"role": "user", "content": prompt}],
                 )
                 return response.content[0].text.strip()
             except Exception as exc:  # noqa: BLE001
                 last_error = exc
                 if attempt < _MAX_RETRIES - 1:
-                    time.sleep(wait)
+                    extra = _RATE_LIMIT_EXTRA_SECONDS if "429" in str(exc) or "rate_limit" in str(exc).lower() else 0.0
+                    time.sleep(wait + extra)
                     wait *= 2
         raise RuntimeError(
             f"[model_client] API call failed after {_MAX_RETRIES} attempts: {last_error}"

@@ -1,0 +1,206 @@
+{
+  "summary": {
+    "full_context_test": {
+      "n": 27,
+      "success_rate": 0.6296296296296297,
+      "avg_constraint_satisfaction": 0.6296296296296297,
+      "avg_active_context_words": 169.8148148148148,
+      "by_family": {
+        "delayed_dependency": {
+          "n": 4,
+          "success_rate": 1.0
+        },
+        "dependency_chain": {
+          "n": 4,
+          "success_rate": 1.0
+        },
+        "false_distractor": {
+          "n": 5,
+          "success_rate": 0.8
+        },
+        "hard_constraint": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "negation_critical": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "synonym_match": {
+          "n": 5,
+          "success_rate": 1.0
+        }
+      }
+    },
+    "non_learning_manager_test": {
+      "n": 27,
+      "success_rate": 0.48148148148148145,
+      "avg_constraint_satisfaction": 0.5709876543209877,
+      "avg_active_context_words": 141.77777777777777,
+      "by_family": {
+        "delayed_dependency": {
+          "n": 4,
+          "success_rate": 0.5
+        },
+        "dependency_chain": {
+          "n": 4,
+          "success_rate": 0.75
+        },
+        "false_distractor": {
+          "n": 5,
+          "success_rate": 0.8
+        },
+        "hard_constraint": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "negation_critical": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "synonym_match": {
+          "n": 5,
+          "success_rate": 0.8
+        }
+      }
+    },
+    "lesson_aware_agent_a_test": {
+      "n": 27,
+      "success_rate": 0.6296296296296297,
+      "avg_constraint_satisfaction": 0.6296296296296297,
+      "avg_active_context_words": 147.25925925925927,
+      "by_family": {
+        "delayed_dependency": {
+          "n": 4,
+          "success_rate": 1.0
+        },
+        "dependency_chain": {
+          "n": 4,
+          "success_rate": 1.0
+        },
+        "false_distractor": {
+          "n": 5,
+          "success_rate": 0.8
+        },
+        "hard_constraint": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "negation_critical": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "synonym_match": {
+          "n": 5,
+          "success_rate": 1.0
+        }
+      }
+    },
+    "lesson_aware_agent_b_test": {
+      "n": 27,
+      "success_rate": 0.5925925925925926,
+      "avg_constraint_satisfaction": 0.5925925925925926,
+      "avg_active_context_words": 147.25925925925927,
+      "by_family": {
+        "delayed_dependency": {
+          "n": 4,
+          "success_rate": 1.0
+        },
+        "dependency_chain": {
+          "n": 4,
+          "success_rate": 1.0
+        },
+        "false_distractor": {
+          "n": 5,
+          "success_rate": 0.6
+        },
+        "hard_constraint": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "negation_critical": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "synonym_match": {
+          "n": 5,
+          "success_rate": 1.0
+        }
+      }
+    }
+  },
+  "dataset": "OpenStack LogHub (loghub/OpenStack_2k) + synthetic multi-service lines \u2014 180 incidents (30 per family \u00d7 6 families), 13-15 obs each; train=125 test=27",
+  "learned_lessons_a": [
+    {
+      "lesson_id": "lesson_0001",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "trigger_tags": [
+        "critical",
+        "hard_constraint"
+      ],
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "supporting_decision_id": "dec_0002",
+      "original_score": 0.0,
+      "counterfactual_score": 1.0,
+      "source_agent": "agent_a",
+      "support_count": 13,
+      "status": "transferable"
+    },
+    {
+      "lesson_id": "lesson_0002",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "trigger_tags": [
+        "critical",
+        "hard_constraint",
+        "negation"
+      ],
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "supporting_decision_id": "dec_0003",
+      "original_score": 0.0,
+      "counterfactual_score": 1.0,
+      "source_agent": "agent_a",
+      "support_count": 1,
+      "status": "candidate"
+    },
+    {
+      "lesson_id": "lesson_0003",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "trigger_tags": [
+        "critical",
+        "delayed_dependency",
+        "hard_constraint"
+      ],
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "supporting_decision_id": "dec_0001",
+      "original_score": 0.0,
+      "counterfactual_score": 1.0,
+      "source_agent": "agent_a",
+      "support_count": 1,
+      "status": "candidate"
+    }
+  ],
+  "transferred_lessons_b": [
+    {
+      "lesson_id": "lesson_0001",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "trigger_tags": [
+        "critical",
+        "hard_constraint"
+      ],
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "supporting_decision_id": "dec_0002",
+      "original_score": 0.0,
+      "counterfactual_score": 1.0,
+      "source_agent": "agent_a",
+      "support_count": 1,
+      "status": "candidate"
+    }
+  ],
+  "num_training_replays": 55,
+  "num_harmful_replays": 15,
+  "num_transferable": 1
+}

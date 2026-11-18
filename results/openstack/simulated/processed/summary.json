@@ -1,0 +1,138 @@
+{
+  "summary": {
+    "full_context_test": {
+      "n": 27,
+      "success_rate": 0.0,
+      "avg_constraint_satisfaction": 0.0,
+      "avg_active_context_words": 177.0,
+      "by_family": {
+        "delayed_dependency": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "dependency_chain": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "false_distractor": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "hard_constraint": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "negation_critical": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "synonym_match": {
+          "n": 5,
+          "success_rate": 0.0
+        }
+      }
+    },
+    "non_learning_manager_test": {
+      "n": 27,
+      "success_rate": 0.0,
+      "avg_constraint_satisfaction": 0.0,
+      "avg_active_context_words": 146.96296296296296,
+      "by_family": {
+        "delayed_dependency": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "dependency_chain": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "false_distractor": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "hard_constraint": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "negation_critical": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "synonym_match": {
+          "n": 5,
+          "success_rate": 0.0
+        }
+      }
+    },
+    "lesson_aware_agent_a_test": {
+      "n": 27,
+      "success_rate": 0.0,
+      "avg_constraint_satisfaction": 0.0,
+      "avg_active_context_words": 146.96296296296296,
+      "by_family": {
+        "delayed_dependency": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "dependency_chain": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "false_distractor": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "hard_constraint": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "negation_critical": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "synonym_match": {
+          "n": 5,
+          "success_rate": 0.0
+        }
+      }
+    },
+    "lesson_aware_agent_b_test": {
+      "n": 27,
+      "success_rate": 0.0,
+      "avg_constraint_satisfaction": 0.0,
+      "avg_active_context_words": 146.96296296296296,
+      "by_family": {
+        "delayed_dependency": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "dependency_chain": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "false_distractor": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "hard_constraint": {
+          "n": 4,
+          "success_rate": 0.0
+        },
+        "negation_critical": {
+          "n": 5,
+          "success_rate": 0.0
+        },
+        "synonym_match": {
+          "n": 5,
+          "success_rate": 0.0
+        }
+      }
+    }
+  },
+  "dataset": "OpenStack LogHub (loghub/OpenStack_2k) + synthetic multi-service lines \u2014 180 incidents (30 per family \u00d7 6 families), 13-15 obs each; train=125 test=27",
+  "learned_lessons_a": [],
+  "transferred_lessons_b": [],
+  "num_training_replays": 64,
+  "num_harmful_replays": 0,
+  "num_transferable": 0
+}
