@@ -1,0 +1,50 @@
+[
+  {
+    "lesson_id": "lesson_0001",
+    "lesson_type": "compression_safety",
+    "operation": "COMPRESS",
+    "trigger_tags": [
+      "critical",
+      "delayed_dependency"
+    ],
+    "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+    "supporting_decision_id": "dec_0003",
+    "original_score": 0.0,
+    "counterfactual_score": 1.0,
+    "source_agent": "agent_a",
+    "support_count": 8,
+    "status": "transferable"
+  },
+  {
+    "lesson_id": "lesson_0002",
+    "lesson_type": "compression_safety",
+    "operation": "COMPRESS",
+    "trigger_tags": [
+      "critical",
+      "hard_constraint"
+    ],
+    "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+    "supporting_decision_id": "dec_0003",
+    "original_score": 0.0,
+    "counterfactual_score": 1.0,
+    "source_agent": "agent_a",
+    "support_count": 8,
+    "status": "transferable"
+  },
+  {
+    "lesson_id": "lesson_0003",
+    "lesson_type": "archive_safety",
+    "operation": "ARCHIVE",
+    "trigger_tags": [
+      "critical",
+      "distractor"
+    ],
+    "instruction": "Never archive items with these tags \u2014 they are needed to complete the task.",
+    "supporting_decision_id": "dec_0001",
+    "original_score": 0.0,
+    "counterfactual_score": 1.0,
+    "source_agent": "agent_a",
+    "support_count": 8,
+    "status": "transferable"
+  }
+]

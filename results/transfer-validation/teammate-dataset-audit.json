@@ -1,0 +1,158 @@
+{
+  "android": {
+    "counts": {
+      "test": 27,
+      "train": 125,
+      "validation": 28
+    },
+    "cross_split_pairs": {
+      "train->test": {
+        "duplicate_destination_inputs": 27,
+        "duplicate_ids": [],
+        "examples": [
+          {
+            "destination_id": "android_false_distractor_026",
+            "source_id": "android_false_distractor_020"
+          },
+          {
+            "destination_id": "android_negation_critical_026",
+            "source_id": "android_negation_critical_020"
+          },
+          {
+            "destination_id": "android_synonym_match_026",
+            "source_id": "android_synonym_match_020"
+          },
+          {
+            "destination_id": "android_hard_constraint_027",
+            "source_id": "android_hard_constraint_021"
+          },
+          {
+            "destination_id": "android_delayed_dependency_027",
+            "source_id": "android_delayed_dependency_021"
+          }
+        ]
+      },
+      "train->validation": {
+        "duplicate_destination_inputs": 28,
+        "duplicate_ids": [],
+        "examples": [
+          {
+            "destination_id": "android_synonym_match_021",
+            "source_id": "android_synonym_match_015"
+          },
+          {
+            "destination_id": "android_hard_constraint_022",
+            "source_id": "android_hard_constraint_016"
+          },
+          {
+            "destination_id": "android_delayed_dependency_022",
+            "source_id": "android_delayed_dependency_016"
+          },
+          {
+            "destination_id": "android_dependency_chain_022",
+            "source_id": "android_dependency_chain_016"
+          },
+          {
+            "destination_id": "android_false_distractor_022",
+            "source_id": "android_false_distractor_016"
+          }
+        ]
+      },
+      "validation->test": {
+        "duplicate_destination_inputs": 19,
+        "duplicate_ids": [],
+        "examples": [
+          {
+            "destination_id": "android_synonym_match_027",
+            "source_id": "android_synonym_match_021"
+          },
+          {
+            "destination_id": "android_hard_constraint_028",
+            "source_id": "android_hard_constraint_022"
+          },
+          {
+            "destination_id": "android_delayed_dependency_028",
+            "source_id": "android_delayed_dependency_022"
+          },
+          {
+            "destination_id": "android_dependency_chain_028",
+            "source_id": "android_dependency_chain_022"
+          },
+          {
+            "destination_id": "android_false_distractor_028",
+            "source_id": "android_false_distractor_022"
+          }
+        ]
+      }
+    },
+    "scope": "Exact inputs and IDs; not a semantic/template/source-window independence proof.",
+    "valid": false,
+    "within_split_duplicate_ids": {
+      "test": 0,
+      "train": 0,
+      "validation": 0
+    }
+  },
+  "bgl": {
+    "counts": {
+      "test": 27,
+      "train": 125,
+      "validation": 28
+    },
+    "cross_split_pairs": {
+      "train->test": {
+        "duplicate_destination_inputs": 0,
+        "duplicate_ids": [],
+        "examples": []
+      },
+      "train->validation": {
+        "duplicate_destination_inputs": 0,
+        "duplicate_ids": [],
+        "examples": []
+      },
+      "validation->test": {
+        "duplicate_destination_inputs": 0,
+        "duplicate_ids": [],
+        "examples": []
+      }
+    },
+    "scope": "Exact inputs and IDs; not a semantic/template/source-window independence proof.",
+    "valid": true,
+    "within_split_duplicate_ids": {
+      "test": 0,
+      "train": 0,
+      "validation": 0
+    }
+  },
+  "openstack": {
+    "counts": {
+      "test": 27,
+      "train": 125,
+      "validation": 28
+    },
+    "cross_split_pairs": {
+      "train->test": {
+        "duplicate_destination_inputs": 0,
+        "duplicate_ids": [],
+        "examples": []
+      },
+      "train->validation": {
+        "duplicate_destination_inputs": 0,
+        "duplicate_ids": [],
+        "examples": []
+      },
+      "validation->test": {
+        "duplicate_destination_inputs": 0,
+        "duplicate_ids": [],
+        "examples": []
+      }
+    },
+    "scope": "Exact inputs and IDs; not a semantic/template/source-window independence proof.",
+    "valid": true,
+    "within_split_duplicate_ids": {
+      "test": 0,
+      "train": 0,
+      "validation": 0
+    }
+  }
+}

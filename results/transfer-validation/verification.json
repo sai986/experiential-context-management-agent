@@ -1,0 +1,51 @@
+{
+  "valid": true,
+  "api_calls": 0,
+  "episodes_checked": 1224,
+  "replays_checked": 120,
+  "null_interventions_checked": 120,
+  "recomputed_test": {
+    "full_context": {
+      "n": 144,
+      "successes": 144,
+      "success_rate": 1.0,
+      "avg_active_context_words": 175.66666666666666
+    },
+    "empty_store": {
+      "n": 144,
+      "successes": 24,
+      "success_rate": 0.16666666666666666,
+      "avg_active_context_words": 11.833333333333334
+    },
+    "learned_a": {
+      "n": 144,
+      "successes": 96,
+      "success_rate": 0.6666666666666666,
+      "avg_active_context_words": 15.166666666666666
+    },
+    "legacy_transfer_b": {
+      "n": 144,
+      "successes": 24,
+      "success_rate": 0.16666666666666666,
+      "avg_active_context_words": 11.833333333333334
+    },
+    "trusted_transfer_b": {
+      "n": 144,
+      "successes": 96,
+      "success_rate": 0.6666666666666666,
+      "avg_active_context_words": 15.166666666666666
+    },
+    "without_archive_lessons": {
+      "n": 144,
+      "successes": 72,
+      "success_rate": 0.5,
+      "avg_active_context_words": 13.166666666666666
+    },
+    "without_compression_lessons": {
+      "n": 144,
+      "successes": 48,
+      "success_rate": 0.3333333333333333,
+      "avg_active_context_words": 13.833333333333334
+    }
+  }
+}

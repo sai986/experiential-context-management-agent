@@ -1,0 +1,61 @@
+{
+  "api_calls": 0,
+  "compressor": "first seven whitespace words; identical in all managed conditions",
+  "families": [
+    "critical_compression",
+    "delayed_compression",
+    "false_archive",
+    "benign_recent",
+    "info_mistag",
+    "joint_loss"
+  ],
+  "generated_dataset_sha256": {
+    "seed-19/data/test.jsonl": "eb69d2ab42211961df2f125e8060f84b5272449041d786fc97b79f37815a98fc",
+    "seed-19/data/train.jsonl": "87e898563a4990289cf3b9038b95a1dafc6e52e6be47db958ac9287a206f9a1a",
+    "seed-19/data/validation.jsonl": "bd2395babb94fb40d40e05e365bfcf67736b9f83ee626d920282382414520286",
+    "seed-41/data/test.jsonl": "b21a589694677764e318077542af3974f1bc80edd53157566b29369e94b934b8",
+    "seed-41/data/train.jsonl": "334672584f0ddf3d84e5287d083c00c0fef32ef79f9fc03263c6e0667cf85d32",
+    "seed-41/data/validation.jsonl": "5b4db261e157c9cd7957742ad94d8e27bc04cd0e4c17455a86880f703ef02272",
+    "seed-7/data/test.jsonl": "a629d0201ff4febe6096c1fe4eb97ca058ff59391af90de44aeaf9247624f368",
+    "seed-7/data/train.jsonl": "e76b8376c4d0a7e69099aebf2458f80aa95042cf76552345b58bd48751a7b2e1",
+    "seed-7/data/validation.jsonl": "7547c9d729a72597649bd0192888726d40e2fcdc2cfc780afd4106a9b13cbfc1"
+  },
+  "implementation_sha256": {
+    "src/attribution/replay.py": "cb2528cc1644a1c0f2f2b26853911586a84caa1815d4d230075c095b7584dfb8",
+    "src/constants.py": "8f0bc5b65bb50bd090a024d8501d61531c66aea1c4d51518d7f23ef4caead9c9",
+    "src/context/ledger.py": "bdcc0bb0378e22ff5b9e0d6e8578dbeade9598dbfd67d6fac9803599343c67e0",
+    "src/context/manager.py": "de7a8273185c7c4479cea69d72cb03f8d92091246b3552a14a43cbf56191bfdb",
+    "src/environment/evaluator.py": "39e568edbc6247d353b3fe68571e11b7f4c3872f15e61d33629de1ff04b4fb2d",
+    "src/environment/split_validation.py": "4df45f5f0a6d1bca6fe7cf92e263a1eeae72d3dceb82bfacfb312fba20818f3f",
+    "src/environment/task_generator.py": "657c07c3452fb363652bb4f2938cc3918d817869f942bb7e60658a6749ff2f38",
+    "src/experiments/run_transfer_validation.py": "3e5759994afa48e375327288ee746e6328a68521872fc9c5561ea0e199ba9e95",
+    "src/experiments/verify_transfer_validation.py": "b7d2e71f264db020aaa0b39ba1d0d2ccc19c22336802ba82399d932123a91261",
+    "src/lessons/lesson_store.py": "5ae39b63a2d133c29866e20428107eb9980fb0c85536d5e1f31e912604315238"
+  },
+  "limitations": [
+    "Controlled fact-retention test, not an LLM or production incident result.",
+    "Held-out values and inputs; task families and authored tag rules are shared.",
+    "Seed variation is not evidence of model or semantic generalization."
+  ],
+  "mode": "deterministic_fact_executor",
+  "protocol_version": 1,
+  "python_version": "3.10.12",
+  "seeds": [
+    7,
+    19,
+    41
+  ],
+  "source_revision": "be109020bf36031eb26a15f729f7b3ad4bb69773",
+  "teammate_dataset_sha256": {
+    "data/android/test.jsonl": "3e2c34f3b44925225e39af28229b0213dad161726cc28b6ec5cd17552c864837",
+    "data/android/train.jsonl": "f11eead83d211258105fa104394d4ca4d8d126186c41d7bb4969167637cba1c1",
+    "data/android/validation.jsonl": "bae2ec3cbd5fb7c43f43e4b9c73b05ae3d6fafafef13c5527c54e389fd064601",
+    "data/bgl/test.jsonl": "59092af055a5e6138415eeb2f5a5e796d7e7bd54d1533735a5cde5bad6460f63",
+    "data/bgl/train.jsonl": "acae4dbb4d139c8a268360ee08031ec2ca98c45a6827c0eb20470d485c9d9187",
+    "data/bgl/validation.jsonl": "1aaf708ff19fa7fa0c6fe8ced74385b0479d55a3d4eeaaa70e8a1946e0e68fac",
+    "data/openstack/test.jsonl": "1bb2ac31e73b48fb726d2c602ed8a7d05021659e44dd37f5c271f923a2686833",
+    "data/openstack/train.jsonl": "db98d29d53bb5674d7079926945a6866e09e2d76cd76e948f79090f25f23214a",
+    "data/openstack/validation.jsonl": "c9d796bf93ed13514c873e6b95a3885dcf18bf8914206235f291ed354144326e"
+  },
+  "train_and_test_per_family": 8
+}

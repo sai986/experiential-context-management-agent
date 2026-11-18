@@ -1,0 +1,34 @@
+[
+  {
+    "counterfactual_score": 1.0,
+    "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+    "lesson_id": "lesson_0001",
+    "lesson_type": "compression_safety",
+    "operation": "COMPRESS",
+    "original_score": 0.0,
+    "source_agent": "agent_a",
+    "status": "transferable",
+    "support_count": 8,
+    "supporting_decision_id": "dec_0003",
+    "trigger_tags": [
+      "critical",
+      "delayed_dependency"
+    ]
+  },
+  {
+    "counterfactual_score": 1.0,
+    "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+    "lesson_id": "lesson_0002",
+    "lesson_type": "compression_safety",
+    "operation": "COMPRESS",
+    "original_score": 0.0,
+    "source_agent": "agent_a",
+    "status": "transferable",
+    "support_count": 8,
+    "supporting_decision_id": "dec_0003",
+    "trigger_tags": [
+      "critical",
+      "hard_constraint"
+    ]
+  }
+]

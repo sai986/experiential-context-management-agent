@@ -58,6 +58,8 @@ The default run has **144 test tasks per condition**, totaling 1,008 test episod
 
 See [generated results](../results/transfer-validation/RESULTS.md), [offline HTML](../results/transfer-validation/RESULTS.html) and [aggregate JSON](../results/transfer-validation/summary.json) for the actual run, including context word counts.
 
+The checked-in [verification record](../results/transfer-validation/verification.json) confirms 1,224 episodes, 120 replay interventions and 120 null checks. A second independent default run reproduced all 41 generated artifacts byte for byte in the same source/Python environment; see the [comparison and hashes](../results/transfer-validation/reproducibility.json). Eleven automated tests pass, including rejection of fabricated answers, fabricated replay outcomes and missing null controls.
+
 The first three loss families and benign control succeed with learned/trusted rules. The info-mistag and joint-loss cases still fail. These negative controls explain the 66.7% result and identify concrete future improvements: broaden suspect discovery and represent partial/joint intervention evidence. They are not fixed by this contribution.
 
 Each seed learns three transferable rules from eight distinct harmful training episodes per pattern. Across seeds: 120 replays, including 72 harmful and 48 neutral; 120 null checks. The verifier checks support against distinct training episode IDs, preventing repeated records from masquerading as independent evidence **in this study**. The general lesson store still lacks a universal evidence-ID deduplication mechanism.

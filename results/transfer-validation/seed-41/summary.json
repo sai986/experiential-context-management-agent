@@ -1,0 +1,485 @@
+{
+  "evaluation_store_unchanged": true,
+  "learned_lessons": [
+    {
+      "counterfactual_score": 1.0,
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "lesson_id": "lesson_0001",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "original_score": 0.0,
+      "source_agent": "agent_a",
+      "status": "transferable",
+      "support_count": 8,
+      "supporting_decision_id": "dec_0003",
+      "trigger_tags": [
+        "critical",
+        "delayed_dependency"
+      ]
+    },
+    {
+      "counterfactual_score": 1.0,
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "lesson_id": "lesson_0002",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "original_score": 0.0,
+      "source_agent": "agent_a",
+      "status": "transferable",
+      "support_count": 8,
+      "supporting_decision_id": "dec_0003",
+      "trigger_tags": [
+        "critical",
+        "hard_constraint"
+      ]
+    },
+    {
+      "counterfactual_score": 1.0,
+      "instruction": "Never archive items with these tags \u2014 they are needed to complete the task.",
+      "lesson_id": "lesson_0003",
+      "lesson_type": "archive_safety",
+      "operation": "ARCHIVE",
+      "original_score": 0.0,
+      "source_agent": "agent_a",
+      "status": "transferable",
+      "support_count": 8,
+      "supporting_decision_id": "dec_0001",
+      "trigger_tags": [
+        "critical",
+        "distractor"
+      ]
+    }
+  ],
+  "legacy_b": [
+    {
+      "counterfactual_score": 1.0,
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "lesson_id": "lesson_0001",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "original_score": 0.0,
+      "source_agent": "agent_a",
+      "status": "candidate",
+      "support_count": 1,
+      "supporting_decision_id": "dec_0003",
+      "trigger_tags": [
+        "critical",
+        "delayed_dependency"
+      ]
+    },
+    {
+      "counterfactual_score": 1.0,
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "lesson_id": "lesson_0002",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "original_score": 0.0,
+      "source_agent": "agent_a",
+      "status": "candidate",
+      "support_count": 1,
+      "supporting_decision_id": "dec_0003",
+      "trigger_tags": [
+        "critical",
+        "hard_constraint"
+      ]
+    },
+    {
+      "counterfactual_score": 1.0,
+      "instruction": "Never archive items with these tags \u2014 they are needed to complete the task.",
+      "lesson_id": "lesson_0003",
+      "lesson_type": "archive_safety",
+      "operation": "ARCHIVE",
+      "original_score": 0.0,
+      "source_agent": "agent_a",
+      "status": "candidate",
+      "support_count": 1,
+      "supporting_decision_id": "dec_0001",
+      "trigger_tags": [
+        "critical",
+        "distractor"
+      ]
+    }
+  ],
+  "null_intervention_checks": 40,
+  "replay_labels": {
+    "HARMFUL": 24,
+    "NEUTRAL": 16
+  },
+  "replays_by_family": {
+    "benign_recent": {},
+    "critical_compression": {
+      "HARMFUL": 8
+    },
+    "delayed_compression": {
+      "HARMFUL": 8
+    },
+    "false_archive": {
+      "HARMFUL": 8
+    },
+    "info_mistag": {},
+    "joint_loss": {
+      "NEUTRAL": 16
+    }
+  },
+  "seed": 41,
+  "test": {
+    "empty_store": {
+      "avg_active_context_words": 11.833333333333334,
+      "by_family": {
+        "benign_recent": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "critical_compression": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "delayed_compression": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "false_archive": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "info_mistag": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "joint_loss": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        }
+      },
+      "n": 48,
+      "success_rate": 0.16666666666666666,
+      "successes": 8
+    },
+    "full_context": {
+      "avg_active_context_words": 173.66666666666666,
+      "by_family": {
+        "benign_recent": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "critical_compression": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "delayed_compression": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "false_archive": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "info_mistag": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "joint_loss": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        }
+      },
+      "n": 48,
+      "success_rate": 1.0,
+      "successes": 48
+    },
+    "learned_a": {
+      "avg_active_context_words": 15.166666666666666,
+      "by_family": {
+        "benign_recent": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "critical_compression": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "delayed_compression": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "false_archive": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "info_mistag": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "joint_loss": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        }
+      },
+      "n": 48,
+      "success_rate": 0.6666666666666666,
+      "successes": 32
+    },
+    "legacy_transfer_b": {
+      "avg_active_context_words": 11.833333333333334,
+      "by_family": {
+        "benign_recent": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "critical_compression": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "delayed_compression": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "false_archive": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "info_mistag": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "joint_loss": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        }
+      },
+      "n": 48,
+      "success_rate": 0.16666666666666666,
+      "successes": 8
+    },
+    "trusted_transfer_b": {
+      "avg_active_context_words": 15.166666666666666,
+      "by_family": {
+        "benign_recent": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "critical_compression": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "delayed_compression": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "false_archive": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "info_mistag": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "joint_loss": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        }
+      },
+      "n": 48,
+      "success_rate": 0.6666666666666666,
+      "successes": 32
+    },
+    "without_archive_lessons": {
+      "avg_active_context_words": 13.166666666666666,
+      "by_family": {
+        "benign_recent": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "critical_compression": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "delayed_compression": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "false_archive": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "info_mistag": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "joint_loss": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        }
+      },
+      "n": 48,
+      "success_rate": 0.5,
+      "successes": 24
+    },
+    "without_compression_lessons": {
+      "avg_active_context_words": 13.833333333333334,
+      "by_family": {
+        "benign_recent": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "critical_compression": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "delayed_compression": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "false_archive": {
+          "n": 8,
+          "success_rate": 1.0,
+          "successes": 8
+        },
+        "info_mistag": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "joint_loss": {
+          "n": 8,
+          "success_rate": 0.0,
+          "successes": 0
+        }
+      },
+      "n": 48,
+      "success_rate": 0.3333333333333333,
+      "successes": 16
+    }
+  },
+  "training_episodes": 48,
+  "training_replays": 40,
+  "transferred_b": [
+    {
+      "counterfactual_score": 1.0,
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "lesson_id": "lesson_0001",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "original_score": 0.0,
+      "source_agent": "agent_a",
+      "status": "transferable",
+      "support_count": 8,
+      "supporting_decision_id": "dec_0003",
+      "trigger_tags": [
+        "critical",
+        "delayed_dependency"
+      ]
+    },
+    {
+      "counterfactual_score": 1.0,
+      "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+      "lesson_id": "lesson_0002",
+      "lesson_type": "compression_safety",
+      "operation": "COMPRESS",
+      "original_score": 0.0,
+      "source_agent": "agent_a",
+      "status": "transferable",
+      "support_count": 8,
+      "supporting_decision_id": "dec_0003",
+      "trigger_tags": [
+        "critical",
+        "hard_constraint"
+      ]
+    },
+    {
+      "counterfactual_score": 1.0,
+      "instruction": "Never archive items with these tags \u2014 they are needed to complete the task.",
+      "lesson_id": "lesson_0003",
+      "lesson_type": "archive_safety",
+      "operation": "ARCHIVE",
+      "original_score": 0.0,
+      "source_agent": "agent_a",
+      "status": "transferable",
+      "support_count": 8,
+      "supporting_decision_id": "dec_0001",
+      "trigger_tags": [
+        "critical",
+        "distractor"
+      ]
+    }
+  ],
+  "validation": {
+    "validation_a": {
+      "avg_active_context_words": 15.166666666666666,
+      "by_family": {
+        "benign_recent": {
+          "n": 4,
+          "success_rate": 1.0,
+          "successes": 4
+        },
+        "critical_compression": {
+          "n": 4,
+          "success_rate": 1.0,
+          "successes": 4
+        },
+        "delayed_compression": {
+          "n": 4,
+          "success_rate": 1.0,
+          "successes": 4
+        },
+        "false_archive": {
+          "n": 4,
+          "success_rate": 1.0,
+          "successes": 4
+        },
+        "info_mistag": {
+          "n": 4,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "joint_loss": {
+          "n": 4,
+          "success_rate": 0.0,
+          "successes": 0
+        }
+      },
+      "n": 24,
+      "success_rate": 0.6666666666666666,
+      "successes": 16
+    }
+  }
+}
