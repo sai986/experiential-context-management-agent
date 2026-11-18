@@ -32,6 +32,17 @@ Evaluated on 180 tasks across 6 incident failure-mode families using a real froz
 - **RQ2:** Agent A uses 60% fewer context words than full context while staying within 11 pp of the full-context ceiling.
 - **RQ3:** 4 transferred lessons give a fresh Agent B 60% success with no additional training or parameter updates.
 
+**Real-world validation** on three LogHub corpora (Android logcat, BGL server logs, OpenStack service logs):
+
+| Domain | Ceiling | Baseline | Agent A | Agent B | Context reduction |
+|--------|---------|----------|---------|---------|-------------------|
+| Synthetic (incident) | 73% | 4% | 62% | 60% | 60% |
+| Android logcat | 44% | 0% | 41% | 33% | 70% |
+| BGL server logs | 41% | 26% | 30% | 33% | 11% |
+| OpenStack service logs | 63% | 48% | 63% | 59% | 13% |
+
+Agent A improves over the non-learning baseline in every domain. On OpenStack, lesson learning completely closes the gap to the full-context ceiling. A consistent lesson pattern — never compressing items tagged `[critical, hard_constraint]` — emerges independently across all 4 domains.
+
 ---
 
 ## What is Novel
@@ -180,7 +191,7 @@ Each task injects 8 background `info`-tagged noise observations to simulate a re
 
 **Stationarity assumption:** the lesson store's `support_count` only increases. If the underlying log stream changes, stale lessons may remain active. Drift-aware lesson deprecation is left as future work.
 
-**Synthetic benchmark:** the benchmark is fully controlled. Each family has exactly 1 critical observation and a deterministic correct answer. Validation on real production incident streams is left as future work.
+**Real-world evaluation scale:** the real-world pilot uses 27 test tasks per domain (same 125/27 train/test split as synthetic). Sufficient to observe trends, but larger test sets would give more reliable per-family estimates, particularly for families with 4–5 tasks per domain.
 
 ---
 
@@ -188,7 +199,7 @@ Each task injects 8 background `info`-tagged noise observations to simulate a re
 
 The following extensions are architecturally prepared in the codebase but not activated in this experiment:
 
-- **Investigation Agent:** `src/agents/investigation_agent.py` implements an LLM-based parser that converts raw incident text into structured tagged observations. Activating it completes the full 3-agent pipeline for real streaming input.
+- **Investigation Agent:** `src/agents/investigation_agent.py` implements an LLM-based parser that converts raw incident text into structured tagged observations. Activated for the real-world LogHub evaluation (Sections 6–7 of the paper); completing the full 3-agent pipeline for live streaming input is left as future work.
 - **Embedding-based lesson retrieval:** replacing tag set-intersection with dense vector similarity would allow lessons to generalise across unseen tag combinations and scale to high-cardinality production log fields.
 - **Bidirectional lesson evidence:** extending the lesson format to record confirmed-safe operations would allow the manager to distinguish "no evidence of harm" from "confirmed safe."
 - **Drift-aware lesson deprecation:** reducing `support_count` when a previously harmful operation no longer causes failures would allow the store to adapt to concept drift.
@@ -234,7 +245,7 @@ See `.env.example` for a template.
 
 | File | Description |
 |------|-------------|
-| `FINAL_REPORT.pdf` | 6-page two-column LaTeX report (all 9 sections + references) |
+| `Team-ALiBi.pdf` | 8-page two-column LaTeX report (all 11 sections + references) |
 | `FINAL_REPORT.md` | Markdown source of the final report |
 | `FINAL_REPORT.tex` | LaTeX source (recompile with `pdflatex FINAL_REPORT.tex`) |
 
