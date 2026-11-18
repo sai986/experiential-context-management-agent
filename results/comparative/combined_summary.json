@@ -1,0 +1,163 @@
+{
+  "incident_real": {
+    "full_context_test": {
+      "success_rate": 0.7272727272727273,
+      "avg_active_context_words": 130.76363636363635,
+      "n": 55
+    },
+    "non_learning_manager_test": {
+      "success_rate": 0.03636363636363636,
+      "avg_active_context_words": 27.0,
+      "n": 55
+    },
+    "lesson_aware_agent_a_test": {
+      "success_rate": 0.6181818181818182,
+      "avg_active_context_words": 52.763636363636365,
+      "n": 55
+    },
+    "lesson_aware_agent_b_test": {
+      "success_rate": 0.6,
+      "avg_active_context_words": 35.43636363636364,
+      "n": 55
+    },
+    "lessons": 4
+  },
+  "android_real": {
+    "full_context_test": {
+      "success_rate": 0.4444444444444444,
+      "avg_active_context_words": 150.85185185185185,
+      "n": 27
+    },
+    "non_learning_manager_test": {
+      "success_rate": 0.0,
+      "avg_active_context_words": 27.22222222222222,
+      "n": 27
+    },
+    "lesson_aware_agent_a_test": {
+      "success_rate": 0.4074074074074074,
+      "avg_active_context_words": 44.81481481481482,
+      "n": 27
+    },
+    "lesson_aware_agent_b_test": {
+      "success_rate": 0.3333333333333333,
+      "avg_active_context_words": 50.74074074074074,
+      "n": 27
+    },
+    "lessons": 2
+  },
+  "android_simulated": {
+    "full_context_test": {
+      "success_rate": 1.0,
+      "avg_active_context_words": 158.66666666666666,
+      "n": 27
+    },
+    "non_learning_manager_test": {
+      "success_rate": 0.037037037037037035,
+      "avg_active_context_words": 27.40740740740741,
+      "n": 27
+    },
+    "lesson_aware_agent_a_test": {
+      "success_rate": 0.8148148148148148,
+      "avg_active_context_words": 46.0,
+      "n": 27
+    },
+    "lesson_aware_agent_b_test": {
+      "success_rate": 0.037037037037037035,
+      "avg_active_context_words": 27.40740740740741,
+      "n": 27
+    },
+    "lessons": 2
+  },
+  "bgl_real": {
+    "full_context_test": {
+      "success_rate": 0.4074074074074074,
+      "avg_active_context_words": 161.7037037037037,
+      "n": 27
+    },
+    "non_learning_manager_test": {
+      "success_rate": 0.25925925925925924,
+      "avg_active_context_words": 137.11111111111111,
+      "n": 27
+    },
+    "lesson_aware_agent_a_test": {
+      "success_rate": 0.2962962962962963,
+      "avg_active_context_words": 143.7037037037037,
+      "n": 27
+    },
+    "lesson_aware_agent_b_test": {
+      "success_rate": 0.3333333333333333,
+      "avg_active_context_words": 141.66666666666666,
+      "n": 27
+    },
+    "lessons": 2
+  },
+  "bgl_simulated": {
+    "full_context_test": {
+      "success_rate": 0.0,
+      "avg_active_context_words": 161.7037037037037,
+      "n": 27
+    },
+    "non_learning_manager_test": {
+      "success_rate": 0.0,
+      "avg_active_context_words": 137.11111111111111,
+      "n": 27
+    },
+    "lesson_aware_agent_a_test": {
+      "success_rate": 0.0,
+      "avg_active_context_words": 137.11111111111111,
+      "n": 27
+    },
+    "lesson_aware_agent_b_test": {
+      "success_rate": 0.0,
+      "avg_active_context_words": 137.11111111111111,
+      "n": 27
+    },
+    "lessons": 0
+  },
+  "openstack_real": {
+    "full_context_test": {
+      "success_rate": 0.6296296296296297,
+      "avg_active_context_words": 169.8148148148148,
+      "n": 27
+    },
+    "non_learning_manager_test": {
+      "success_rate": 0.48148148148148145,
+      "avg_active_context_words": 141.77777777777777,
+      "n": 27
+    },
+    "lesson_aware_agent_a_test": {
+      "success_rate": 0.6296296296296297,
+      "avg_active_context_words": 147.25925925925927,
+      "n": 27
+    },
+    "lesson_aware_agent_b_test": {
+      "success_rate": 0.5925925925925926,
+      "avg_active_context_words": 147.25925925925927,
+      "n": 27
+    },
+    "lessons": 3
+  },
+  "openstack_simulated": {
+    "full_context_test": {
+      "success_rate": 0.0,
+      "avg_active_context_words": 177.0,
+      "n": 27
+    },
+    "non_learning_manager_test": {
+      "success_rate": 0.0,
+      "avg_active_context_words": 146.96296296296296,
+      "n": 27
+    },
+    "lesson_aware_agent_a_test": {
+      "success_rate": 0.0,
+      "avg_active_context_words": 146.96296296296296,
+      "n": 27
+    },
+    "lesson_aware_agent_b_test": {
+      "success_rate": 0.0,
+      "avg_active_context_words": 146.96296296296296,
+      "n": 27
+    },
+    "lessons": 0
+  }
+}

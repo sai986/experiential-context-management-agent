@@ -69,8 +69,8 @@ FAMILY_SYNONYM_MATCH      = "synonym_match"
 # ---------------------------------------------------------------------------
 
 # Default model for all LLM calls (compression, investigation, task agent).
-MODEL_DEFAULT = "claude-sonnet-4-6"
+MODEL_DEFAULT = "claude-haiku-4-5-20251001"
 
 # Model for compression calls. Set to the same model as MODEL_DEFAULT since
 # the proxy key may only permit one model ID.
-MODEL_COMPRESSION = "claude-sonnet-4-6"
+MODEL_COMPRESSION = "claude-haiku-4-5-20251001"
