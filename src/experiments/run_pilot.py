@@ -57,7 +57,7 @@ def run_episode(task: ControlledTask, manager, condition: str) -> dict:
         "family": task.family,
         "answer": answer,
         "evaluation": asdict(evaluation),
-        "active_context_tokens": ledger.token_estimate(),
+        "active_context_tokens": ledger.word_estimate(),
         "ledger": ledger,
     }
 

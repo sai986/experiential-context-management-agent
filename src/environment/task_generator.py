@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Iterable
 
@@ -10,7 +10,7 @@ from typing import Iterable
 class Observation:
     step: int
     content: str
-    tags: list[str]
+    tags: list[str] = field(default_factory=list)
 
 
 @dataclass(frozen=True)
@@ -22,6 +22,7 @@ class ControlledTask:
     expected_constraints: list[str]
     forbidden_outputs: list[str]
     required_outputs: list[str]
+    synonym_groups: list[list[str]] = field(default_factory=list)
 
 
 def _hard_constraint_task(i: int) -> ControlledTask:

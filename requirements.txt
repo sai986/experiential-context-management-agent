@@ -1,0 +1,6 @@
+# Core dependency — Anthropic SDK for Claude API calls (USE_LLM=1 mode).
+# Not needed for USE_LLM=0 (simulated) runs.
+anthropic>=0.40.0,<1.0.0
+
+# Loads ANTHROPIC_API_KEY from a .env file into os.environ automatically.
+python-dotenv>=1.0.0
