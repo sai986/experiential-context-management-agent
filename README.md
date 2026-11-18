@@ -15,6 +15,18 @@
 > convert validated effects into reusable lessons, and transfer those lessons across frozen
 > task agents without parameter updates?
 
+## Controlled transfer validation — Anil's contribution
+
+The new [protocol and contribution note](docs/ANIL_TRANSFER_VALIDATION.md) adds a compressor-matched experiment, measured operation ablations, an evidence-preserving transfer import and reproducible raw artifacts. The study uses a deterministic fact executor; its results validate the mechanism separately from the historical LLM pilots.
+
+```bash
+python -m src.experiments.run_transfer_validation
+python -m src.experiments.verify_transfer_validation results/transfer-validation
+python -m unittest discover -s tests -v
+```
+
+See [study results](results/transfer-validation/RESULTS.md) or [offline HTML](results/transfer-validation/RESULTS.html). Existing incident/LogHub result tables below remain historical; the corrected transfer behavior has not been rerun against a hosted model.
+
 ---
 
 ## Key Results

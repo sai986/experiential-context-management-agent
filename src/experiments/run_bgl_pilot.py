@@ -773,8 +773,7 @@ def main() -> None:
     # ------------------------------------------------------------------
     transferable   = lesson_store_a.get_transferable()
     lesson_store_b = LessonStore()
-    for lesson in transferable:
-        lesson_store_b.add(lesson)
+    lesson_store_b.import_transferable(lesson_store_a)
     _log(f"Phase 3 — {len(transferable)} transferable lessons given to Agent B")
     ctx_log.log_lesson_store(
         lesson_store_b,

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Callable
+
 from src.constants import MODEL_COMPRESSION, OP_ARCHIVE, OP_COMPRESS, TAG_DISTRACTOR, TAG_INFO, TAG_TRIGGER
 from src.context.ledger import ContextLedger
 from src.lessons.lesson_store import LessonStore
@@ -60,6 +62,9 @@ class FixedCompressionManager(BaseManager):
 
 
 class NonLearningManager(BaseManager):
+    def __init__(self, *, compressor: Callable[[str], str] | None = None) -> None:
+        self.compressor = compressor if compressor is not None else risky_compression
+
     def manage_after_observation(self, ledger: ContextLedger, current_step: int) -> None:
         for item in list(ledger.active_items()):
             if TAG_TRIGGER in item.tags:
@@ -72,16 +77,18 @@ class NonLearningManager(BaseManager):
             elif item.step <= current_step - 3 and item.immutable:
                 ledger.compress_item(
                     item.item_id,
-                    risky_compression(item.content),
+                    self.compressor(item.content),
                     "Compress older information without lessons.",
                     current_step,
                 )
 
 
 class LessonAwareManager(BaseManager):
-    def __init__(self, lesson_store: LessonStore, model_client=None) -> None:
+    def __init__(self, lesson_store: LessonStore, model_client=None,
+                 *, compressor: Callable[[str], str] | None = None) -> None:
         self.lesson_store = lesson_store
         self.model_client = model_client
+        self.compressor = compressor
 
     def manage_after_observation(self, ledger: ContextLedger, current_step: int) -> None:
         for item in list(ledger.active_items()):
@@ -122,7 +129,8 @@ class LessonAwareManager(BaseManager):
                         current_step,
                     )
                 else:
-                    compressed = intelligent_compression(item.content, self.model_client)
+                    compressed = (self.compressor(item.content) if self.compressor is not None
+                                  else intelligent_compression(item.content, self.model_client))
                     ledger.compress_item(
                         item.item_id,
                         compressed,

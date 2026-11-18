@@ -130,6 +130,36 @@ class LessonStore:
         self._support_count[lesson_id] = 1
         self._status[lesson_id]        = "candidate"
 
+    def import_transferable(self, source: "LessonStore") -> int:
+        """Copy eligible evidence from a trusted source store, without recounting it.
+
+        ``add`` records one new local confirmation. Importing is different: source
+        support and transferable status must survive for default retrieval to use
+        the rule. Repeated imports are idempotent. For an existing pattern we keep
+        the maximum support, not the sum: source/local evidence may overlap.
+        Returns the number of newly imported patterns. Source records are unchanged.
+        """
+        eligible = source.get_transferable()
+        if any(source.get_support_count(lesson.lesson_id) < _THRESHOLD_TRANSFERABLE
+               for lesson in eligible):
+            raise ValueError("Transferable source evidence is below the promotion threshold.")
+        imported = 0
+        for lesson in eligible:
+            existing = next((item for item in self.lessons
+                             if item.operation == lesson.operation
+                             and set(item.trigger_tags) == set(lesson.trigger_tags)
+                             and item.instruction == lesson.instruction), None)
+            if existing is None:
+                self.add(lesson)
+                existing = self.lessons[-1]
+                imported += 1
+            self._support_count[existing.lesson_id] = max(
+                self.get_support_count(existing.lesson_id),
+                source.get_support_count(lesson.lesson_id),
+            )
+            self._status[existing.lesson_id] = "transferable"
+        return imported
+
     def _promote_if_ready(self, lesson_id: str) -> None:
         """Check whether a lesson's support_count has crossed a promotion threshold."""
         count  = self._support_count[lesson_id]

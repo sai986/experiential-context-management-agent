@@ -495,8 +495,7 @@ def main() -> None:
     # -- Phase 3: Cross-agent transfer ---------------------------------------
     transferable   = lesson_store_a.get_transferable()
     lesson_store_b = LessonStore()
-    for les in transferable:
-        lesson_store_b.add(les)
+    lesson_store_b.import_transferable(lesson_store_a)
     _log(f"Phase 3 — {len(transferable)} transferable lessons given to Agent B")
 
     test_results_b: list[dict] = []
