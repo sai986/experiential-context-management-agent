@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_chain_000",
+  "condition": "openstack_transfer",
+  "prompt_sha256": "3773ff54f11f7d151d143122682639c91a6c4f8a28ea74eb5b24667c579cb5f3",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 18,
+  "status": "ok",
+  "elapsed_seconds": 2.2390599586069584,
+  "response_id": "msg_bdrk_kezomh2ezypczwb6ygqi5lzyzarlb2wlucsm3xe6ts4gwxhe2s7q",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 170,
+  "output_tokens": 147,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Complete Procedure in Correct Order\n\n1. **Step 1**: Back up the current configuration to a versioned snapshot.\n2. **Step 2**: Drain all active connections from the load balancer.\n3. **Step 3**: Apply the schema migration with a dry-run flag first.\n4. **Step 4**: Re-enable traffic only after the health check passes.\n\n**Recommendation**: Execute this sequence strictly in order to ensure data safety and zero-downtime deployment. The backup protects against rollback needs, connection draining prevents data loss, dry-run validation catches errors before production impact, and health checks confirm system stability before resuming traffic."
+}

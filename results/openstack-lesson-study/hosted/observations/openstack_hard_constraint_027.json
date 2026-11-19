@@ -1,0 +1,123 @@
+[
+  {
+    "content": "CONSTRAINT: Nova compute [instance: bf8c824d-f099-4433-a41e-e3da7578262e] VM migrations must NOT use live migration when host has less than 2GB free RAM. Always perform a cold migration: stop the VM first, then migrate.",
+    "step": 1,
+    "tags": [
+      "critical",
+      "hard_constraint",
+      "negation"
+    ]
+  },
+  {
+    "content": "[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] Took 1.00 seconds to destroy the instance on the hypervisor.",
+    "step": 2,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1874 time: 0.2280791",
+    "step": 3,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] Took 0.53 seconds to deallocate network for instance.",
+    "step": 4,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 211 time: 0.0968180",
+    "step": 5,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [WARNING] Unknown base file: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+    "step": 6,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [INFO] 10.7.121.209 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-cb37a85d-93c4-ad32-573b-df7a8e14338e",
+    "step": 7,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.scheduler.manager] [DEBUG] Selected host compute-1 for instance bf8c824d-f099-4433-a41e-e3da7578262e",
+    "step": 8,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[cinder.api.v2] [DEBUG] volume status check OK vol-77381f02 req_id=req-cb37a85d-93c4-ad32-573b-df7a8e14338e",
+    "step": 9,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[neutron.plugins.ml2.managers] [INFO] Attempting to bind port port-e701d529 on host compute-8",
+    "step": 10,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [WARNING] Unknown base file: /var/lib/nova/instances/_base/img-db02e75d",
+    "step": 11,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-96fdaa52",
+    "step": 12,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] Removable base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+    "step": 13,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] Removing base or swap file: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+    "step": 14,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.api.openstack.wsgi] [INFO] HTTP exception thrown: No instances found for any event",
+    "step": 15,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'POST /v2/e9746973ac574c6b8a9e8857f56a7608/os-server-external-events HTTP/1.1' status: 404 len: 296 time: 0.0",
+    "step": 16,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "What constraint must be respected when migrating this VM?",
+    "step": 17,
+    "tags": [
+      "trigger"
+    ]
+  }
+]

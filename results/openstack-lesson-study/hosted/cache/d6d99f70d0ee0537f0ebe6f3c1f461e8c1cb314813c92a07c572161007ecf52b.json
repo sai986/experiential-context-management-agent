@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "openstack",
+  "task_id": "openstack_synonym_match_027",
+  "condition": "full_context",
+  "prompt_sha256": "d6d99f70d0ee0537f0ebe6f3c1f461e8c1cb314813c92a07c572161007ecf52b",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 91,
+  "status": "ok",
+  "elapsed_seconds": 2.124490611255169,
+  "response_id": "msg_bdrk_72pc55247l33jit6nw7bbt6fmecyxvidyei3epco56lwazie2xwa",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 1153,
+  "output_tokens": 71,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Answer\n\nBased on [ctx_0001], the **billing system** must be notified of the Nova API rate limit violation for project [proj-6bcdb51e]. This notification is required for usage accounting and charge-back purposes, as the constraint explicitly mandates reporting rate limit violations to enable proper billing reconciliation."
+}

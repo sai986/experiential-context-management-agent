@@ -1,0 +1,19 @@
+{
+  "purpose": "investigation",
+  "max_tokens": 2048,
+  "task_id": "openstack_delayed_dependency_027",
+  "dataset": "openstack",
+  "prompt_sha256": "c85b03e479c672c5aee75f79f8ec499a9f17c939ef7eb35c0ea1e1cd6d7bf499",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 2,
+  "status": "ok",
+  "elapsed_seconds": 2.3681047298014164,
+  "response_id": "msg_bdrk_mjuu7zmamjx3suebig2hxlhresuw4yikijwooq7g6hgrhspjuvza",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 1192,
+  "output_tokens": 266,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "```json\n[\n  {\"line\": 1, \"tags\": [\"critical\", \"hard_constraint\"]},\n  {\"line\": 2, \"tags\": [\"info\"]},\n  {\"line\": 3, \"tags\": [\"info\"]},\n  {\"line\": 4, \"tags\": [\"info\"]},\n  {\"line\": 5, \"tags\": [\"info\"]},\n  {\"line\": 6, \"tags\": [\"info\"]},\n  {\"line\": 7, \"tags\": [\"delayed_dependency\"]},\n  {\"line\": 8, \"tags\": [\"delayed_dependency\"]},\n  {\"line\": 9, \"tags\": [\"distractor\"]},\n  {\"line\": 10, \"tags\": [\"distractor\"]},\n  {\"line\": 11, \"tags\": [\"delayed_dependency\"]},\n  {\"line\": 12, \"tags\": [\"distractor\"]},\n  {\"line\": 13, \"tags\": [\"info\"]},\n  {\"line\": 14, \"tags\": [\"info\"]},\n  {\"line\": 15, \"tags\": [\"info\"]},\n  {\"line\": 16, \"tags\": [\"distractor\"]}\n]\n```"
+}

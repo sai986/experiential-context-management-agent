@@ -1,0 +1,179 @@
+[
+  {
+    "agrees": true,
+    "answer": "Use a local offline model.",
+    "evaluation": {
+      "constraint_satisfaction": 1.0,
+      "forbidden_output_violation": 0,
+      "forbidden_terms_found": [],
+      "missing_required_terms": [],
+      "task_success": 1
+    },
+    "fixture": "affirmed_constraint",
+    "forbidden": [
+      "cloud API"
+    ],
+    "intended_success": 1,
+    "required": [
+      "offline",
+      "local"
+    ],
+    "synonyms": []
+  },
+  {
+    "agrees": true,
+    "answer": "Use a local offline model, not a cloud API.",
+    "evaluation": {
+      "constraint_satisfaction": 1.0,
+      "forbidden_output_violation": 0,
+      "forbidden_terms_found": [],
+      "missing_required_terms": [],
+      "task_success": 1
+    },
+    "fixture": "negated_forbidden",
+    "forbidden": [
+      "cloud API"
+    ],
+    "intended_success": 1,
+    "required": [
+      "offline",
+      "local"
+    ],
+    "synonyms": []
+  },
+  {
+    "agrees": true,
+    "answer": "Use a cloud API instead of local offline inference.",
+    "evaluation": {
+      "constraint_satisfaction": 0.0,
+      "forbidden_output_violation": 1,
+      "forbidden_terms_found": [
+        "cloud API"
+      ],
+      "missing_required_terms": [],
+      "task_success": 0
+    },
+    "fixture": "actual_violation",
+    "forbidden": [
+      "cloud API"
+    ],
+    "intended_success": 0,
+    "required": [
+      "offline",
+      "local"
+    ],
+    "synonyms": []
+  },
+  {
+    "agrees": false,
+    "answer": "Use PowerShell; bash is unsupported.",
+    "evaluation": {
+      "constraint_satisfaction": 0.0,
+      "forbidden_output_violation": 1,
+      "forbidden_terms_found": [
+        "bash"
+      ],
+      "missing_required_terms": [],
+      "task_success": 0
+    },
+    "fixture": "post_nominal_negation",
+    "forbidden": [
+      "bash"
+    ],
+    "intended_success": 1,
+    "required": [
+      "PowerShell"
+    ],
+    "synonyms": []
+  },
+  {
+    "agrees": true,
+    "answer": "Use PowerShell; do not use bash.",
+    "evaluation": {
+      "constraint_satisfaction": 1.0,
+      "forbidden_output_violation": 0,
+      "forbidden_terms_found": [],
+      "missing_required_terms": [],
+      "task_success": 1
+    },
+    "fixture": "pre_nominal_negation",
+    "forbidden": [
+      "bash"
+    ],
+    "intended_success": 1,
+    "required": [
+      "PowerShell"
+    ],
+    "synonyms": []
+  },
+  {
+    "agrees": false,
+    "answer": "No network. Use local offline inference.",
+    "evaluation": {
+      "constraint_satisfaction": 0.0,
+      "forbidden_output_violation": 0,
+      "forbidden_terms_found": [],
+      "missing_required_terms": [
+        "local",
+        "offline"
+      ],
+      "task_success": 0
+    },
+    "fixture": "unrelated_negation",
+    "forbidden": [
+      "cloud API"
+    ],
+    "intended_success": 1,
+    "required": [
+      "local",
+      "offline"
+    ],
+    "synonyms": []
+  },
+  {
+    "agrees": false,
+    "answer": "Do not use ps1.",
+    "evaluation": {
+      "constraint_satisfaction": 1.0,
+      "forbidden_output_violation": 0,
+      "forbidden_terms_found": [],
+      "missing_required_terms": [],
+      "task_success": 1
+    },
+    "fixture": "negated_synonym",
+    "forbidden": [],
+    "intended_success": 0,
+    "required": [
+      "PowerShell"
+    ],
+    "synonyms": [
+      [
+        "PowerShell",
+        "ps1"
+      ]
+    ]
+  },
+  {
+    "agrees": false,
+    "answer": "Glance storage backend is the cause; scheduler errors are unrelated.",
+    "evaluation": {
+      "constraint_satisfaction": 0.0,
+      "forbidden_output_violation": 1,
+      "forbidden_terms_found": [
+        "scheduler"
+      ],
+      "missing_required_terms": [],
+      "task_success": 0
+    },
+    "fixture": "dismissed_alternative",
+    "forbidden": [
+      "scheduler"
+    ],
+    "intended_success": 1,
+    "required": [
+      "Glance",
+      "storage backend"
+    ],
+    "synonyms": []
+  }
+]

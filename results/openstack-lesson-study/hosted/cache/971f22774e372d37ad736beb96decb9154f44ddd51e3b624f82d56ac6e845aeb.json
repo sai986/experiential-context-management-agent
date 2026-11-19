@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_distractor_001",
+  "condition": "full_context",
+  "prompt_sha256": "971f22774e372d37ad736beb96decb9154f44ddd51e3b624f82d56ac6e845aeb",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 73,
+  "status": "ok",
+  "elapsed_seconds": 2.2834523878991604,
+  "response_id": "msg_bdrk_ut3mjg55tmekrvw5zcsl2yzeo7qevaf4heuufdx2fkjweasbxn4a",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 326,
+  "output_tokens": 107,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Deployment Recommendation\n\n**Proceed with deployment following the standard pipeline, contingent on second engineer review completion.** The system metrics are healthy across all dimensions (CPU 38%, memory 51%, latency 142ms, disk I/O 12%), cache performance is optimal, and infrastructure is stable (successful backup, renewed TLS certificate, all pods healthy). Enforce the critical constraint [ctx_0001] before merge to satisfy both the stakeholder's speed requirement and operational safety standards."
+}

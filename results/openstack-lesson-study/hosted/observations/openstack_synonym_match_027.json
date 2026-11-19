@@ -1,0 +1,137 @@
+[
+  {
+    "content": "CONSTRAINT: Nova API rate limit violations for project [proj-6bcdb51e] must be reported to the billing system for usage accounting and charge-back.",
+    "step": 1,
+    "tags": [
+      "critical",
+      "hard_constraint"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2663860",
+    "step": 2,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2659440",
+    "step": 3,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): ",
+    "step": 4,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): ",
+    "step": 5,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+    "step": 6,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.api.openstack.wsgi] [WARNING] Rate limit exceeded for project proj-6bcdb51e req_id=req-ef7f6e3f-073a-7522-c7e4-cbe5acdcb47b \u2014 HTTP 429 Too Many Requests",
+    "step": 7,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[cinder.scheduler.manager] [INFO] Scheduling volume vol-00de856e to host compute-3",
+    "step": 8,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-a9d71d38",
+    "step": 9,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[cinder.volume.drivers.lvm] [INFO] Volume vol-1cedcdbf attached at /dev/vdb",
+    "step": 10,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[glance.api.v2.images] [ERROR] Image img-1b9a3508 download failed: storage backend timeout req_id=req-ef7f6e3f-073a-7522-c7e4-cbe5acdcb47b",
+    "step": 11,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [INFO] 10.3.51.43 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-ef7f6e3f-073a-7522-c7e4-cbe5acdcb47b",
+    "step": 12,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.api.openstack.compute.server_external_events] [INFO] Creating event network-vif-plugged:418c107f-95d6-4655-ae6b-90bca57d9a71 for instance be793e89-2cc3-4f99-9884-9c6a624a84b",
+    "step": 13,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'POST /v2/e9746973ac574c6b8a9e8857f56a7608/os-server-external-events HTTP/1.1' status: 200 len: 380 time: 0.0",
+    "step": 14,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] VM Resumed (Lifecycle Event)",
+    "step": 15,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.driver] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Instance spawned successfully.",
+    "step": 16,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "What external system must be notified of this rate limit violation?",
+    "step": 17,
+    "tags": [
+      "trigger"
+    ]
+  }
+]

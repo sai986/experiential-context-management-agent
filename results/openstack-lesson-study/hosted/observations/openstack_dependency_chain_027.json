@@ -1,0 +1,122 @@
+[
+  {
+    "content": "CONSTRAINT: OpenStack VM launch sequence for instance [bf8c824d-f099-4433-a41e-e3da7578262e] must follow: Step 1 Keystone auth, Step 2 Nova schedule, Step 3 Neutron port allocation, Step 4 Cinder volume attach.",
+    "step": 1,
+    "tags": [
+      "critical",
+      "hard_constraint"
+    ]
+  },
+  {
+    "content": "[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-44dac7bb",
+    "step": 2,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1759 time: 0.2584841",
+    "step": 3,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1759 time: 0.2935462",
+    "step": 4,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] VM Stopped (Lifecycle Event)",
+    "step": 5,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.scheduler.manager] [DEBUG] Selected host compute-4 for instance bf8c824d-f099-4433-a41e-e3da7578262e",
+    "step": 6,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [INFO] 10.11.237.14 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-55a0db97-419b-7333-9b8c-e31bc11161a7",
+    "step": 7,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[cinder.api.v2] [DEBUG] volume status check OK vol-a19f084b req_id=req-55a0db97-419b-7333-9b8c-e31bc11161a7",
+    "step": 8,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[neutron.plugins.ml2.managers] [INFO] Attempting to bind port port-c6db1b32 on host compute-4",
+    "step": 9,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [WARNING] Unknown base file: /var/lib/nova/instances/_base/img-70d59eff",
+    "step": 10,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2618670",
+    "step": 11,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2564912",
+    "step": 12,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2517929",
+    "step": 13,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2661891",
+    "step": 14,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2605171",
+    "step": 15,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2561631",
+    "step": 16,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "List all OpenStack services that must complete successfully in order.",
+    "step": 17,
+    "tags": [
+      "trigger"
+    ]
+  }
+]

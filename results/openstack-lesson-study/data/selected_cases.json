@@ -1,0 +1,1922 @@
+[
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "delayed_dependency",
+    "forbidden_outputs": [
+      "skip security",
+      "bypass"
+    ],
+    "question": "What network prerequisite must be satisfied before this VM becomes reachable?",
+    "raw_text": "CONSTRAINT: Neutron network [port: port-2352a566] requires security group rule sync before VM instance [be793e89-2cc3-4f99-9884-9c6a624a84bc] becomes reachable. iptables rules must be flushed and re-applied before marking the VM ready.\n[nova.compute.claims] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Attempting claim: memory 2048 MB, disk 20 GB, vcpus 1 CPU\n[nova.compute.claims] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Total memory: 64172 MB, used: 512.00 MB\n[nova.compute.claims] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] memory limit: 96258.00 MB, free: 95746.00 MB\n[nova.compute.claims] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Total disk: 15 GB, used: 0.00 GB\n[nova.compute.claims] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] disk limit not specified, defaulting to unlimited\n[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-2352a566 req_id=req-d4f12110-50b5-7397-2449-ea0f5e6b1e56\n[neutron.agent.linux.iptables_manager] [INFO] Refresh security group rules for instance be793e89-2cc3-4f99-9884-9c6a624a84bc\n[keystone.token.provider] [WARNING] Token validation failed for user user-665c25af: expired req_id=req-d4f12110-50b5-7397-2449-ea0f5e6b1e56\n[cinder.api.v2.volumes] [INFO] Creating volume size=20 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc req_id=req-d4f12110-50b5-7397-2449-ea0f5e6b1e56\n[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-814dc8d9 req_id=req-d4f12110-50b5-7397-2449-ea0f5e6b1e56\n[neutron.wsgi.server] [INFO] 10.15.21.11 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-d4f12110-50b5-7397-2449-ea0f5e6b1e56\n[nova.compute.claims] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Total vcpu: 16 VCPU, used: 0.00 VCPU\n[nova.compute.claims] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] vcpu limit not specified, defaulting to unlimited\n[nova.compute.claims] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Claim successful\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1575 time: 0.1996739",
+    "required_outputs": [
+      "security group",
+      "sync",
+      "iptables"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [
+      [
+        "security group",
+        "secgroup",
+        "firewall rule",
+        "network policy"
+      ],
+      [
+        "sync",
+        "synchronize",
+        "flush",
+        "re-apply"
+      ],
+      [
+        "iptables",
+        "netfilter",
+        "packet filter",
+        "firewall"
+      ]
+    ],
+    "task_id": "openstack_delayed_dependency_027"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "The target machine is Windows Server 2019 \u2014 shell scripts using bash are not supported."
+    ],
+    "family": "delayed_dependency",
+    "forbidden_outputs": [
+      "apt-get",
+      "Linux",
+      "chmod"
+    ],
+    "observations": [
+      {
+        "content": "The target machine is Windows Server 2019 \u2014 shell scripts using bash are not supported.",
+        "step": 1,
+        "tags": [
+          "critical",
+          "delayed_dependency",
+          "negation"
+        ]
+      },
+      {
+        "content": "The initial scoping phase appears to be a standard technical review.",
+        "step": 2,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "The user wants the fastest reliable path to completion.",
+        "step": 3,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "Several past attempts used different approaches.",
+        "step": 4,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 5,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 6,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Now produce the concrete step-by-step procedure.",
+        "step": 13,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Provide the final procedure while respecting all earlier constraints.",
+    "required_outputs": [
+      "PowerShell",
+      "Windows"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [
+      [
+        "PowerShell",
+        "ps1"
+      ],
+      [
+        "Windows",
+        "Win",
+        "Windows Server"
+      ]
+    ],
+    "task_id": "inc_delayed_000"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "dependency_chain",
+    "forbidden_outputs": [],
+    "question": "List all OpenStack services that must complete successfully in order.",
+    "raw_text": "CONSTRAINT: OpenStack VM launch sequence for instance [bf8c824d-f099-4433-a41e-e3da7578262e] must follow: Step 1 Keystone auth, Step 2 Nova schedule, Step 3 Neutron port allocation, Step 4 Cinder volume attach.\n[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-44dac7bb\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1759 time: 0.2584841\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1759 time: 0.2935462\n[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] VM Stopped (Lifecycle Event)\n[nova.scheduler.manager] [DEBUG] Selected host compute-4 for instance bf8c824d-f099-4433-a41e-e3da7578262e\n[neutron.wsgi.server] [INFO] 10.11.237.14 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-55a0db97-419b-7333-9b8c-e31bc11161a7\n[cinder.api.v2] [DEBUG] volume status check OK vol-a19f084b req_id=req-55a0db97-419b-7333-9b8c-e31bc11161a7\n[neutron.plugins.ml2.managers] [INFO] Attempting to bind port port-c6db1b32 on host compute-4\n[nova.virt.libvirt.imagecache] [WARNING] Unknown base file: /var/lib/nova/instances/_base/img-70d59eff\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2618670\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2564912\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2517929\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2661891\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2605171\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2561631",
+    "required_outputs": [
+      "Keystone",
+      "Nova",
+      "Neutron",
+      "Cinder"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [
+      [
+        "Keystone",
+        "auth service",
+        "identity service",
+        "token provider"
+      ],
+      [
+        "Neutron",
+        "network service",
+        "networking",
+        "SDN controller"
+      ],
+      [
+        "Cinder",
+        "block storage",
+        "volume service",
+        "storage backend"
+      ]
+    ],
+    "task_id": "openstack_dependency_chain_027"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "Step 1: Back up the current configuration to a versioned snapshot.",
+      "Step 2: Drain all active connections from the load balancer.",
+      "Step 3: Apply the schema migration with a dry-run flag first.",
+      "Step 4: Re-enable traffic only after the health check passes."
+    ],
+    "family": "dependency_chain",
+    "forbidden_outputs": [
+      "Step 1 only",
+      "partial"
+    ],
+    "observations": [
+      {
+        "content": "Step 1: Back up the current configuration to a versioned snapshot.",
+        "step": 1,
+        "tags": [
+          "critical",
+          "delayed_dependency"
+        ]
+      },
+      {
+        "content": "The team is familiar with the existing infrastructure.",
+        "step": 2,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "Previous attempts used manual processes that caused downtime.",
+        "step": 3,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "Step 2: Drain all active connections from the load balancer.",
+        "step": 4,
+        "tags": [
+          "critical",
+          "delayed_dependency"
+        ]
+      },
+      {
+        "content": "Step 3: Apply the schema migration with a dry-run flag first.",
+        "step": 5,
+        "tags": [
+          "critical",
+          "delayed_dependency"
+        ]
+      },
+      {
+        "content": "Step 4: Re-enable traffic only after the health check passes.",
+        "step": 6,
+        "tags": [
+          "critical",
+          "delayed_dependency"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 13,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 14,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Now execute the full procedure in the correct order.",
+        "step": 15,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Reproduce the complete procedure in the correct order.",
+    "required_outputs": [
+      "Back up",
+      "Drain",
+      "dry-run",
+      "health check"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [],
+    "task_id": "inc_chain_000"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "false_distractor",
+    "forbidden_outputs": [
+      "scheduler",
+      "nova-scheduler",
+      "compute host"
+    ],
+    "question": "Which service is the true root cause, ignoring the nova-scheduler errors?",
+    "raw_text": "CONSTRAINT: Glance image [img-cf136eaf] download errors must NOT be treated as Nova scheduler failures. The root cause is in the Glance storage backend, not the nova-scheduler or compute host selection.\n[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] During sync_power_state the instance has a pending task (spawning). Ski\n[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] VM Resumed (Lifecycle Event)\n[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] Took 20.31 seconds to build instance.\n[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] During sync_power_state the instance has a pending task (spawning). Ski\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2863400\n[glance.api.v2.images] [ERROR] Image img-cf136eaf download failed: storage backend timeout req_id=req-1544409d-c95d-2093-f2e2-0d2fcaf3c094\n[glance.store.http] [WARNING] Retrying image img-cf136eaf download (attempt 2) req_id=req-1544409d-c95d-2093-f2e2-0d2fcaf3c094\n[cinder.api.v2] [DEBUG] volume status check OK vol-f5f6115b req_id=req-1544409d-c95d-2093-f2e2-0d2fcaf3c094\n[neutron.plugins.ml2.managers] [INFO] Attempting to bind port port-1c04e6cb on host compute-1\n[nova.virt.libvirt.imagecache] [WARNING] Unknown base file: /var/lib/nova/instances/_base/img-65cdc471\n[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-8b615cc2\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1910 time: 0.2544081\n[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): \n[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): \n[nova.virt.libvirt.imagecache] [INFO] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+    "required_outputs": [
+      "image",
+      "Glance",
+      "storage backend"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [
+      [
+        "Glance",
+        "image service",
+        "image registry",
+        "glance store"
+      ],
+      [
+        "storage backend",
+        "image store",
+        "glance store",
+        "object store"
+      ],
+      [
+        "image",
+        "VM image",
+        "boot image",
+        "glance image"
+      ]
+    ],
+    "task_id": "openstack_false_distractor_026"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "CRITICAL CONSTRAINT: Do not deploy to the production environment \u2014 use staging only."
+    ],
+    "family": "false_distractor",
+    "forbidden_outputs": [
+      "production",
+      "prod"
+    ],
+    "observations": [
+      {
+        "content": "CRITICAL CONSTRAINT: Do not deploy to the production environment \u2014 use staging only.",
+        "step": 1,
+        "tags": [
+          "distractor",
+          "critical",
+          "negation"
+        ]
+      },
+      {
+        "content": "The team has a standard deployment pipeline in place.",
+        "step": 2,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "Several unrelated configuration options were discussed earlier.",
+        "step": 3,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "The stakeholder wants to proceed quickly.",
+        "step": 4,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 5,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 6,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "What is your recommendation for the deployment?",
+        "step": 13,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Provide a deployment recommendation that meets all stated constraints.",
+    "required_outputs": [
+      "staging"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [],
+    "task_id": "inc_distractor_000"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "hard_constraint",
+    "forbidden_outputs": [
+      "live migration",
+      "live-migrate"
+    ],
+    "question": "What constraint must be respected when migrating this VM?",
+    "raw_text": "CONSTRAINT: Nova compute [instance: bf8c824d-f099-4433-a41e-e3da7578262e] VM migrations must NOT use live migration when host has less than 2GB free RAM. Always perform a cold migration: stop the VM first, then migrate.\n[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] Took 1.00 seconds to destroy the instance on the hypervisor.\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1874 time: 0.2280791\n[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] Took 0.53 seconds to deallocate network for instance.\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 211 time: 0.0968180\n[nova.virt.libvirt.imagecache] [WARNING] Unknown base file: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\n[neutron.wsgi.server] [INFO] 10.7.121.209 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-cb37a85d-93c4-ad32-573b-df7a8e14338e\n[nova.scheduler.manager] [DEBUG] Selected host compute-1 for instance bf8c824d-f099-4433-a41e-e3da7578262e\n[cinder.api.v2] [DEBUG] volume status check OK vol-77381f02 req_id=req-cb37a85d-93c4-ad32-573b-df7a8e14338e\n[neutron.plugins.ml2.managers] [INFO] Attempting to bind port port-e701d529 on host compute-8\n[nova.virt.libvirt.imagecache] [WARNING] Unknown base file: /var/lib/nova/instances/_base/img-db02e75d\n[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-96fdaa52\n[nova.virt.libvirt.imagecache] [INFO] Removable base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\n[nova.virt.libvirt.imagecache] [INFO] Removing base or swap file: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\n[nova.api.openstack.wsgi] [INFO] HTTP exception thrown: No instances found for any event\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'POST /v2/e9746973ac574c6b8a9e8857f56a7608/os-server-external-events HTTP/1.1' status: 404 len: 296 time: 0.0",
+    "required_outputs": [
+      "cold migration",
+      "stop first",
+      "free RAM"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [
+      [
+        "cold migration",
+        "cold migrate",
+        "offline migration",
+        "non-live migration"
+      ],
+      [
+        "stop first",
+        "power off first",
+        "shutdown before migrating",
+        "halt VM"
+      ],
+      [
+        "free RAM",
+        "available memory",
+        "free memory",
+        "RAM available"
+      ]
+    ],
+    "task_id": "openstack_hard_constraint_027"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "The system must run fully offline \u2014 no cloud API calls are permitted."
+    ],
+    "family": "hard_constraint",
+    "forbidden_outputs": [
+      "cloud",
+      "API",
+      "online"
+    ],
+    "observations": [
+      {
+        "content": "The system must run fully offline \u2014 no cloud API calls are permitted.",
+        "step": 1,
+        "tags": [
+          "critical",
+          "hard_constraint",
+          "negation"
+        ]
+      },
+      {
+        "content": "The team has experience with several deployment tools.",
+        "step": 2,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "An earlier prototype used a different approach than the current plan.",
+        "step": 3,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "The stakeholder wants a practical and maintainable solution.",
+        "step": 4,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "There are multiple valid technical paths to consider.",
+        "step": 5,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 6,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 13,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Provide your final architecture recommendation.",
+        "step": 14,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Recommend a solution architecture that meets all stated constraints.",
+    "required_outputs": [
+      "offline",
+      "local"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [
+      [
+        "cloud",
+        "hosted"
+      ],
+      [
+        "API",
+        "endpoint"
+      ]
+    ],
+    "task_id": "inc_hard_000"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "negation_critical",
+    "forbidden_outputs": [
+      "auto-renew",
+      "automatic token",
+      "silent refresh"
+    ],
+    "question": "What action is explicitly prohibited for this token/auth failure?",
+    "raw_text": "CONSTRAINT: Keystone token validation failures for user [user-33b35f0b] must NOT be auto-renewed without explicit user re-authentication. Automatic token refresh is prohibited \u2014 the user must manually re-authenticate.\n[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): \n[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): \n[nova.virt.libvirt.imagecache] [INFO] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /openstack/2012-08-10/meta_data.json HTTP/1.1' status: 200 len: 264 time: 0.2157998\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /openstack/2013-10-17 HTTP/1.1' status: 200 len: 157 time: 0.0013340\n[keystone.token.provider] [WARNING] Token validation failed for user user-33b35f0b: expired req_id=req-6ed7149f-00fb-bb90-1772-2cf0f38e6bc3\n[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-33b35f0b\n[cinder.scheduler.manager] [INFO] Scheduling volume vol-96adb159 to host compute-4\n[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-179907e7\n[cinder.volume.drivers.lvm] [INFO] Volume vol-9a987ebf attached at /dev/vdb\n[glance.api.v2.images] [ERROR] Image img-e8558705 download failed: storage backend timeout req_id=req-6ed7149f-00fb-bb90-1772-2cf0f38e6bc3\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /openstack/2013-10-17/vendor_data.json HTTP/1.1' status: 200 len: 124 time: 0.2159710\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /openstack/2013-10-17/vendor_data.json HTTP/1.1' status: 200 len: 124 time: 0.2191730\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /openstack/2013-10-17/user_data HTTP/1.1' status: 404 len: 176 time: 0.2141590\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /openstack/2013-10-17/meta_data.json HTTP/1.1' status: 200 len: 967 time: 0.0009689",
+    "required_outputs": [
+      "re-authenticate",
+      "user action",
+      "manual"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [
+      [
+        "re-authenticate",
+        "re-auth",
+        "login again",
+        "re-login",
+        "new authentication"
+      ],
+      [
+        "manual",
+        "explicit",
+        "user-initiated",
+        "operator action"
+      ],
+      [
+        "user action",
+        "human intervention",
+        "user must",
+        "operator must"
+      ]
+    ],
+    "task_id": "openstack_negation_critical_026"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "The solution must not store any personally identifiable information (PII) on disk."
+    ],
+    "family": "negation_critical",
+    "forbidden_outputs": [
+      "store PII",
+      "write PII",
+      "save user data",
+      "log personal"
+    ],
+    "observations": [
+      {
+        "content": "The solution must not store any personally identifiable information (PII) on disk.",
+        "step": 1,
+        "tags": [
+          "critical",
+          "hard_constraint",
+          "negation"
+        ]
+      },
+      {
+        "content": "The team explored several implementation options.",
+        "step": 2,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "An older version of the system had no such restrictions.",
+        "step": 3,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "The user wants a clean and auditable solution.",
+        "step": 4,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 5,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 6,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Provide the recommended implementation approach.",
+        "step": 13,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Recommend an implementation approach that satisfies all constraints.",
+    "required_outputs": [
+      "in-memory"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [
+      [
+        "in-memory",
+        "memory only",
+        "in memory"
+      ]
+    ],
+    "task_id": "inc_negation_000"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "synonym_match",
+    "forbidden_outputs": [],
+    "question": "What external system must be notified of this rate limit violation?",
+    "raw_text": "CONSTRAINT: Nova API rate limit violations for project [proj-15f6bc5d] must be reported to the billing system for usage accounting and charge-back.\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /latest/meta-data/block-device-mapping/ HTTP/1.1' status: 200 len: 124 time: 0.2300491\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /latest/meta-data/block-device-mapping/ami HTTP/1.1' status: 200 len: 119 time: 0.0009940\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /latest/meta-data/block-device-mapping/root HTTP/1.1' status: 200 len: 124 time: 0.2360520\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /latest/meta-data/placement/ HTTP/1.1' status: 200 len: 134 time: 0.0015550\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'DELETE /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/bf8c824d-f099-4433-a41e-e3da7578262e HTTP/1.1' status: 2\n[nova.api.openstack.wsgi] [WARNING] Rate limit exceeded for project proj-15f6bc5d req_id=req-245f8b4a-2716-5ab6-73c1-d55776e26e93 \u2014 HTTP 429 Too Many Requests\n[cinder.api.v2] [DEBUG] volume status check OK vol-6b1ff5a3 req_id=req-245f8b4a-2716-5ab6-73c1-d55776e26e93\n[neutron.plugins.ml2.managers] [INFO] Attempting to bind port port-171ce89e on host compute-3\n[nova.virt.libvirt.imagecache] [WARNING] Unknown base file: /var/lib/nova/instances/_base/img-221d5b6d\n[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-7a5e6ec5\n[nova.scheduler.manager] [DEBUG] Selected host compute-8 for instance bf8c824d-f099-4433-a41e-e3da7578262e\n[nova.compute.manager] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] Terminating instance\n[nova.metadata.wsgi.server] [INFO] 10.11.21.136,10.11.10.1 'GET /latest/meta-data/placement/availability-zone HTTP/1.1' status: 200 len: 120 time: 0.218619\n[nova.virt.libvirt.driver] [INFO] [instance: bf8c824d-f099-4433-a41e-e3da7578262e] Instance destroyed successfully.\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1916 time: 0.2665620",
+    "required_outputs": [
+      "billing"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [
+      [
+        "billing",
+        "charge",
+        "accounting",
+        "metering",
+        "usage report",
+        "charge-back",
+        "chargeback",
+        "cost tracking"
+      ]
+    ],
+    "task_id": "openstack_synonym_match_026"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "The infrastructure must be hosted on a cloud platform."
+    ],
+    "family": "synonym_match",
+    "forbidden_outputs": [
+      "on-premise",
+      "bare metal",
+      "local server"
+    ],
+    "observations": [
+      {
+        "content": "The infrastructure must be hosted on a cloud platform.",
+        "step": 1,
+        "tags": [
+          "critical",
+          "hard_constraint"
+        ]
+      },
+      {
+        "content": "The team is evaluating different architectural patterns.",
+        "step": 2,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "A competitor product uses a different approach entirely.",
+        "step": 3,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "The stakeholder values maintainability and cost-efficiency.",
+        "step": 4,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 5,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 6,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "What architecture do you recommend?",
+        "step": 13,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Recommend an architecture that satisfies all constraints.",
+    "required_outputs": [
+      "cloud"
+    ],
+    "selection_rank": 0,
+    "synonym_groups": [
+      [
+        "cloud",
+        "hosted",
+        "cloud-hosted",
+        "cloud platform"
+      ]
+    ],
+    "task_id": "inc_synonym_000"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "delayed_dependency",
+    "forbidden_outputs": [
+      "skip security",
+      "bypass"
+    ],
+    "question": "What network prerequisite must be satisfied before this VM becomes reachable?",
+    "raw_text": "CONSTRAINT: Neutron network [port: port-76e14790] requires security group rule sync before VM instance [be793e89-2cc3-4f99-9884-9c6a624a84bc] becomes reachable. iptables rules must be flushed and re-applied before marking the VM ready.\n[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /openstack/2013-10-17/user_data HTTP/1.1' status: 404 len: 176 time: 0.2108901\n[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /openstack/2013-10-17/meta_data.json HTTP/1.1' status: 200 len: 967 time: 0.0013261\n[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /openstack/2013-10-17/meta_data.json HTTP/1.1' status: 200 len: 967 time: 0.0008872\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'DELETE /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/be793e89-2cc3-4f99-9884-9c6a624a84bc HTTP/1.1' status: 2\n[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Terminating instance\n[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-76e14790 req_id=req-eb59003a-53bc-0611-9af4-ab8a8908d3f9\n[neutron.agent.linux.iptables_manager] [INFO] Refresh security group rules for instance be793e89-2cc3-4f99-9884-9c6a624a84bc\n[keystone.token.provider] [WARNING] Token validation failed for user user-06e0fc6b: expired req_id=req-eb59003a-53bc-0611-9af4-ab8a8908d3f9\n[cinder.api.v2.volumes] [INFO] Creating volume size=20 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc req_id=req-eb59003a-53bc-0611-9af4-ab8a8908d3f9\n[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-27e493fb req_id=req-eb59003a-53bc-0611-9af4-ab8a8908d3f9\n[neutron.wsgi.server] [INFO] 10.10.93.228 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-eb59003a-53bc-0611-9af4-ab8a8908d3f9\n[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /latest/meta-data/ HTTP/1.1' status: 200 len: 328 time: 0.2276061\n[nova.virt.libvirt.driver] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Instance destroyed successfully.\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1916 time: 0.2693460\n[nova.virt.libvirt.driver] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Deleting instance files /var/lib/nova/instances/be793e89-2cc3-4f99-9884",
+    "required_outputs": [
+      "security group",
+      "sync",
+      "iptables"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [
+      [
+        "security group",
+        "secgroup",
+        "firewall rule",
+        "network policy"
+      ],
+      [
+        "sync",
+        "synchronize",
+        "flush",
+        "re-apply"
+      ],
+      [
+        "iptables",
+        "netfilter",
+        "packet filter",
+        "firewall"
+      ]
+    ],
+    "task_id": "openstack_delayed_dependency_028"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "The database is in read-only replica mode during the migration window."
+    ],
+    "family": "delayed_dependency",
+    "forbidden_outputs": [
+      "INSERT",
+      "UPDATE",
+      "DELETE",
+      "DROP"
+    ],
+    "observations": [
+      {
+        "content": "The database is in read-only replica mode during the migration window.",
+        "step": 1,
+        "tags": [
+          "critical",
+          "delayed_dependency",
+          "negation"
+        ]
+      },
+      {
+        "content": "The initial scoping phase appears to be a standard technical review.",
+        "step": 2,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "The user wants the fastest reliable path to completion.",
+        "step": 3,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "Several past attempts used different approaches.",
+        "step": 4,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 5,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 6,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Now produce the concrete step-by-step procedure.",
+        "step": 13,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Provide the final procedure while respecting all earlier constraints.",
+    "required_outputs": [
+      "read-only"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [
+      [
+        "read-only",
+        "readonly",
+        "read only"
+      ]
+    ],
+    "task_id": "inc_delayed_001"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "dependency_chain",
+    "forbidden_outputs": [],
+    "question": "List all OpenStack services that must complete successfully in order.",
+    "raw_text": "CONSTRAINT: OpenStack VM launch sequence for instance [be793e89-2cc3-4f99-9884-9c6a624a84bc] must follow: Step 1 Keystone auth, Step 2 Nova schedule, Step 3 Neutron port allocation, Step 4 Cinder volume attach.\n[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-11eb0f84\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1874 time: 0.1886330\n[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Took 0.46 seconds to deallocate network for instance.\n[nova.virt.libvirt.imagecache] [WARNING] Unknown base file: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\n[nova.scheduler.manager] [DEBUG] Selected host compute-4 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc\n[neutron.wsgi.server] [INFO] 10.8.181.216 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-c2978392-5c80-7220-1f77-765f2e5ce13a\n[keystone.token.provider] [WARNING] Token validation failed for user user-99aea9fe: expired req_id=req-c2978392-5c80-7220-1f77-765f2e5ce13a\n[cinder.api.v2.volumes] [INFO] Creating volume size=20 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc req_id=req-c2978392-5c80-7220-1f77-765f2e5ce13a\n[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-a7a48a3b req_id=req-c2978392-5c80-7220-1f77-765f2e5ce13a\n[nova.virt.libvirt.imagecache] [INFO] Removable base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\n[nova.virt.libvirt.imagecache] [INFO] Removing base or swap file: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 211 time: 0.0931380\n[nova.api.openstack.wsgi] [INFO] HTTP exception thrown: No instances found for any event\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'POST /v2/e9746973ac574c6b8a9e8857f56a7608/os-server-external-events HTTP/1.1' status: 404 len: 296 time: 0.0\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'POST /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers HTTP/1.1' status: 202 len: 733 time: 0.4657719",
+    "required_outputs": [
+      "Keystone",
+      "Nova",
+      "Neutron",
+      "Cinder"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [
+      [
+        "Keystone",
+        "auth service",
+        "identity service",
+        "token provider"
+      ],
+      [
+        "Neutron",
+        "network service",
+        "networking",
+        "SDN controller"
+      ],
+      [
+        "Cinder",
+        "block storage",
+        "volume service",
+        "storage backend"
+      ]
+    ],
+    "task_id": "openstack_dependency_chain_028"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "Step 1: Export all user records to a staging table.",
+      "Step 2: Validate checksums against the original table.",
+      "Step 3: Run the transformation pipeline on the staging table.",
+      "Step 4: Promote the staging table to production after sign-off."
+    ],
+    "family": "dependency_chain",
+    "forbidden_outputs": [
+      "Step 1 only",
+      "partial"
+    ],
+    "observations": [
+      {
+        "content": "Step 1: Export all user records to a staging table.",
+        "step": 1,
+        "tags": [
+          "critical",
+          "delayed_dependency"
+        ]
+      },
+      {
+        "content": "The team is familiar with the existing infrastructure.",
+        "step": 2,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "Previous attempts used manual processes that caused downtime.",
+        "step": 3,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "Step 2: Validate checksums against the original table.",
+        "step": 4,
+        "tags": [
+          "critical",
+          "delayed_dependency"
+        ]
+      },
+      {
+        "content": "Step 3: Run the transformation pipeline on the staging table.",
+        "step": 5,
+        "tags": [
+          "critical",
+          "delayed_dependency"
+        ]
+      },
+      {
+        "content": "Step 4: Promote the staging table to production after sign-off.",
+        "step": 6,
+        "tags": [
+          "critical",
+          "delayed_dependency"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 13,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 14,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Now execute the full procedure in the correct order.",
+        "step": 15,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Reproduce the complete procedure in the correct order.",
+    "required_outputs": [
+      "Export",
+      "checksums",
+      "transformation pipeline",
+      "sign-off"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [],
+    "task_id": "inc_chain_001"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "false_distractor",
+    "forbidden_outputs": [
+      "scheduler",
+      "nova-scheduler",
+      "compute host"
+    ],
+    "question": "Which service is the true root cause, ignoring the nova-scheduler errors?",
+    "raw_text": "CONSTRAINT: Glance image [img-e08748b4] download errors must NOT be treated as Nova scheduler failures. The root cause is in the Glance storage backend, not the nova-scheduler or compute host selection.\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2642100\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2559950\n[nova.compute.resource_tracker] [INFO] Auditing locally available compute resources for node cp-1.slowvm1.tcloud-pg0.utah.cloudlab.us\n[nova.compute.resource_tracker] [INFO] Total usable vcpus: 16, total allocated vcpus: 1\n[nova.compute.resource_tracker] [INFO] Final resource view: name=cp-1.slowvm1.tcloud-pg0.utah.cloudlab.us phys_ram=64172MB used_ram=2560MB phys_disk=15GB used_\n[glance.api.v2.images] [ERROR] Image img-e08748b4 download failed: storage backend timeout req_id=req-e05a2a8a-c500-1e3e-f59d-219410217062\n[glance.store.http] [WARNING] Retrying image img-e08748b4 download (attempt 2) req_id=req-e05a2a8a-c500-1e3e-f59d-219410217062\n[neutron.wsgi.server] [INFO] 10.14.241.140 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-e05a2a8a-c500-1e3e-f59d-219410217062\n[neutron.wsgi.server] [DEBUG] GET /v2.0/ports 200 latency=0.461ms req_id=req-e05a2a8a-c500-1e3e-f59d-219410217062\n[neutron.plugins.ml2.managers] [INFO] Attempting to bind port port-339864aa on host compute-5\n[neutron.agent.linux.iptables_manager] [INFO] Refresh security group rules for instance a8179850-0b45-cb04-e5bc-89c093a69684\n[nova.compute.resource_tracker] [INFO] Compute_service record updated for cp-1.slowvm1.tcloud-pg0.utah.cloudlab.us:cp-1.slowvm1.tcloud-pg0.utah.cloudlab.us\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2706959\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2729750\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2790480",
+    "required_outputs": [
+      "image",
+      "Glance",
+      "storage backend"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [
+      [
+        "Glance",
+        "image service",
+        "image registry",
+        "glance store"
+      ],
+      [
+        "storage backend",
+        "image store",
+        "glance store",
+        "object store"
+      ],
+      [
+        "image",
+        "VM image",
+        "boot image",
+        "glance image"
+      ]
+    ],
+    "task_id": "openstack_false_distractor_027"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "CRITICAL CONSTRAINT: All changes must be reviewed by a second engineer before merge."
+    ],
+    "family": "false_distractor",
+    "forbidden_outputs": [
+      "unreviewed",
+      "solo merge",
+      "skip review"
+    ],
+    "observations": [
+      {
+        "content": "CRITICAL CONSTRAINT: All changes must be reviewed by a second engineer before merge.",
+        "step": 1,
+        "tags": [
+          "distractor",
+          "critical",
+          "negation"
+        ]
+      },
+      {
+        "content": "The team has a standard deployment pipeline in place.",
+        "step": 2,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "Several unrelated configuration options were discussed earlier.",
+        "step": 3,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "The stakeholder wants to proceed quickly.",
+        "step": 4,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 5,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 6,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "What is your recommendation for the deployment?",
+        "step": 13,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Provide a deployment recommendation that meets all stated constraints.",
+    "required_outputs": [
+      "review",
+      "second engineer"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [],
+    "task_id": "inc_distractor_001"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "hard_constraint",
+    "forbidden_outputs": [
+      "live migration",
+      "live-migrate"
+    ],
+    "question": "What constraint must be respected when migrating this VM?",
+    "raw_text": "CONSTRAINT: Nova compute [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] VM migrations must NOT use live migration when host has less than 2GB free RAM. Always perform a cold migration: stop the VM first, then migrate.\n[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] VM Resumed (Lifecycle Event)\n[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Took 19.97 seconds to build instance.\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1910 time: 0.2641079\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1910 time: 0.2763309\n[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): \n[neutron.wsgi.server] [INFO] 10.5.211.30 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-2fd1843d-9207-1602-161c-d6742978868d\n[nova.scheduler.manager] [DEBUG] Selected host compute-5 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc\n[keystone.token.provider] [WARNING] Token validation failed for user user-4a1dc6c7: expired req_id=req-2fd1843d-9207-1602-161c-d6742978868d\n[cinder.api.v2.volumes] [INFO] Creating volume size=20 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc req_id=req-2fd1843d-9207-1602-161c-d6742978868d\n[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-a3d63e4f req_id=req-2fd1843d-9207-1602-161c-d6742978868d\n[neutron.wsgi.server] [INFO] 10.11.115.212 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-2fd1843d-9207-1602-161c-d6742978868d\n[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): \n[nova.virt.libvirt.imagecache] [INFO] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\n[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /openstack/2012-08-10/meta_data.json HTTP/1.1' status: 200 len: 264 time: 0.2397351\n[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /openstack/2013-10-17 HTTP/1.1' status: 200 len: 157 time: 0.0005910",
+    "required_outputs": [
+      "cold migration",
+      "stop first",
+      "free RAM"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [
+      [
+        "cold migration",
+        "cold migrate",
+        "offline migration",
+        "non-live migration"
+      ],
+      [
+        "stop first",
+        "power off first",
+        "shutdown before migrating",
+        "halt VM"
+      ],
+      [
+        "free RAM",
+        "available memory",
+        "free memory",
+        "RAM available"
+      ]
+    ],
+    "task_id": "openstack_hard_constraint_028"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "The total cost must stay under 500 USD \u2014 paid SaaS tools are not allowed."
+    ],
+    "family": "hard_constraint",
+    "forbidden_outputs": [
+      "paid",
+      "SaaS",
+      "subscription"
+    ],
+    "observations": [
+      {
+        "content": "The total cost must stay under 500 USD \u2014 paid SaaS tools are not allowed.",
+        "step": 1,
+        "tags": [
+          "critical",
+          "hard_constraint",
+          "negation"
+        ]
+      },
+      {
+        "content": "The team has experience with several deployment tools.",
+        "step": 2,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "An earlier prototype used a different approach than the current plan.",
+        "step": 3,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "The stakeholder wants a practical and maintainable solution.",
+        "step": 4,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "There are multiple valid technical paths to consider.",
+        "step": 5,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 6,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 13,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Provide your final architecture recommendation.",
+        "step": 14,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Recommend a solution architecture that meets all stated constraints.",
+    "required_outputs": [
+      "free",
+      "open-source"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [
+      [
+        "free",
+        "open source",
+        "open-source"
+      ],
+      [
+        "cost",
+        "price"
+      ]
+    ],
+    "task_id": "inc_hard_001"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "negation_critical",
+    "forbidden_outputs": [
+      "auto-renew",
+      "automatic token",
+      "silent refresh"
+    ],
+    "question": "What action is explicitly prohibited for this token/auth failure?",
+    "raw_text": "CONSTRAINT: Keystone token validation failures for user [user-7c29ca3c] must NOT be auto-renewed without explicit user re-authentication. Automatic token refresh is prohibited \u2014 the user must manually re-authenticate.\n[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] VM Paused (Lifecycle Event)\n[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] During sync_power_state the instance has a pending task (spawning). Ski\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2741919\n[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): \n[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): \n[keystone.token.provider] [WARNING] Token validation failed for user user-7c29ca3c: expired req_id=req-93b78bab-3815-1095-648e-85ebd1c1a2db\n[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-7c29ca3c\n[keystone.token.provider] [WARNING] Token validation failed for user user-cdb8e4ff: expired req_id=req-93b78bab-3815-1095-648e-85ebd1c1a2db\n[cinder.api.v2.volumes] [INFO] Creating volume size=20 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc req_id=req-93b78bab-3815-1095-648e-85ebd1c1a2db\n[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-12b8c36e req_id=req-93b78bab-3815-1095-648e-85ebd1c1a2db\n[neutron.wsgi.server] [INFO] 10.15.163.90 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-93b78bab-3815-1095-648e-85ebd1c1a2db\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2659979\n[nova.virt.libvirt.imagecache] [INFO] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2558751\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.3656721",
+    "required_outputs": [
+      "re-authenticate",
+      "user action",
+      "manual"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [
+      [
+        "re-authenticate",
+        "re-auth",
+        "login again",
+        "re-login",
+        "new authentication"
+      ],
+      [
+        "manual",
+        "explicit",
+        "user-initiated",
+        "operator action"
+      ],
+      [
+        "user action",
+        "human intervention",
+        "user must",
+        "operator must"
+      ]
+    ],
+    "task_id": "openstack_negation_critical_027"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "The process must not modify the original source files \u2014 work on a copy only."
+    ],
+    "family": "negation_critical",
+    "forbidden_outputs": [
+      "modify original",
+      "overwrite source",
+      "edit in place"
+    ],
+    "observations": [
+      {
+        "content": "The process must not modify the original source files \u2014 work on a copy only.",
+        "step": 1,
+        "tags": [
+          "critical",
+          "hard_constraint",
+          "negation"
+        ]
+      },
+      {
+        "content": "The team explored several implementation options.",
+        "step": 2,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "An older version of the system had no such restrictions.",
+        "step": 3,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "The user wants a clean and auditable solution.",
+        "step": 4,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 5,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 6,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Provide the recommended implementation approach.",
+        "step": 13,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Recommend an implementation approach that satisfies all constraints.",
+    "required_outputs": [
+      "copy"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [
+      [
+        "copy",
+        "duplicate",
+        "copied"
+      ]
+    ],
+    "task_id": "inc_negation_001"
+  },
+  {
+    "dataset": "openstack",
+    "expected_constraints": [],
+    "family": "synonym_match",
+    "forbidden_outputs": [],
+    "question": "What external system must be notified of this rate limit violation?",
+    "raw_text": "CONSTRAINT: Nova API rate limit violations for project [proj-6bcdb51e] must be reported to the billing system for usage accounting and charge-back.\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2663860\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2659440\n[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): \n[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): \n[nova.virt.libvirt.imagecache] [INFO] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742\n[nova.api.openstack.wsgi] [WARNING] Rate limit exceeded for project proj-6bcdb51e req_id=req-ef7f6e3f-073a-7522-c7e4-cbe5acdcb47b \u2014 HTTP 429 Too Many Requests\n[cinder.scheduler.manager] [INFO] Scheduling volume vol-00de856e to host compute-3\n[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-a9d71d38\n[cinder.volume.drivers.lvm] [INFO] Volume vol-1cedcdbf attached at /dev/vdb\n[glance.api.v2.images] [ERROR] Image img-1b9a3508 download failed: storage backend timeout req_id=req-ef7f6e3f-073a-7522-c7e4-cbe5acdcb47b\n[neutron.wsgi.server] [INFO] 10.3.51.43 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-ef7f6e3f-073a-7522-c7e4-cbe5acdcb47b\n[nova.api.openstack.compute.server_external_events] [INFO] Creating event network-vif-plugged:418c107f-95d6-4655-ae6b-90bca57d9a71 for instance be793e89-2cc3-4f99-9884-9c6a624a84b\n[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'POST /v2/e9746973ac574c6b8a9e8857f56a7608/os-server-external-events HTTP/1.1' status: 200 len: 380 time: 0.0\n[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] VM Resumed (Lifecycle Event)\n[nova.virt.libvirt.driver] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Instance spawned successfully.",
+    "required_outputs": [
+      "billing"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [
+      [
+        "billing",
+        "charge",
+        "accounting",
+        "metering",
+        "usage report",
+        "charge-back",
+        "chargeback",
+        "cost tracking"
+      ]
+    ],
+    "task_id": "openstack_synonym_match_027"
+  },
+  {
+    "dataset": "synthetic_incident",
+    "expected_constraints": [
+      "The interface must be accessible to users (meet WCAG 2.1 AA accessibility standards)."
+    ],
+    "family": "synonym_match",
+    "forbidden_outputs": [
+      "inaccessible",
+      "no screen reader",
+      "skip accessibility"
+    ],
+    "observations": [
+      {
+        "content": "The interface must be accessible to users (meet WCAG 2.1 AA accessibility standards).",
+        "step": 1,
+        "tags": [
+          "critical",
+          "hard_constraint"
+        ]
+      },
+      {
+        "content": "The team is evaluating different architectural patterns.",
+        "step": 2,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "A competitor product uses a different approach entirely.",
+        "step": 3,
+        "tags": [
+          "distractor"
+        ]
+      },
+      {
+        "content": "The stakeholder values maintainability and cost-efficiency.",
+        "step": 4,
+        "tags": [
+          "preference"
+        ]
+      },
+      {
+        "content": "Metric: CPU utilisation at 38%, memory at 51%.",
+        "step": 5,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: cache hit ratio 0.91 \u2014 no eviction pressure.",
+        "step": 6,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: scheduled backup completed successfully at 03:00 UTC.",
+        "step": 7,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: average request latency 142ms over the last 5 minutes.",
+        "step": 8,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Debug: garbage collection pause 18ms \u2014 within normal range.",
+        "step": 9,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: TLS certificate renewal successful, expiry extended.",
+        "step": 10,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "Metric: disk I/O at 12% \u2014 well below threshold.",
+        "step": 11,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "System log: service heartbeat normal, all pods healthy.",
+        "step": 12,
+        "tags": [
+          "info"
+        ]
+      },
+      {
+        "content": "What architecture do you recommend?",
+        "step": 13,
+        "tags": [
+          "trigger"
+        ]
+      }
+    ],
+    "question": "Recommend an architecture that satisfies all constraints.",
+    "required_outputs": [
+      "accessible"
+    ],
+    "selection_rank": 1,
+    "synonym_groups": [
+      [
+        "accessible",
+        "WCAG",
+        "a11y",
+        "accessibility"
+      ]
+    ],
+    "task_id": "inc_synonym_001"
+  }
+]

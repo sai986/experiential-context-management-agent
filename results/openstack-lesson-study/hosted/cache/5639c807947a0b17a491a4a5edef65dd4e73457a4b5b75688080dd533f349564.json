@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "openstack",
+  "task_id": "openstack_false_distractor_026",
+  "condition": "synthetic_transfer",
+  "prompt_sha256": "5639c807947a0b17a491a4a5edef65dd4e73457a4b5b75688080dd533f349564",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 24,
+  "status": "ok",
+  "elapsed_seconds": 2.34493587911129,
+  "response_id": "msg_bdrk_t7ve4ehtolulg2omy4u2jt7ton6lqqeuhtiytk4cswk6qrtpasjq",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 869,
+  "output_tokens": 120,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Root Cause Analysis\n\n**Glance** is the true root cause. The logs clearly show a storage backend timeout in the Glance image service (ctx_0007), which is causing image download failures and retry attempts (ctx_0008). As stated in the constraint, this is a Glance storage backend issue, not a Nova scheduler problem.\n\n**Recommendation:** Investigate the Glance storage backend connectivity and performance, check for timeouts in the backend storage system, and verify network connectivity between the Glance service and its storage repository."
+}

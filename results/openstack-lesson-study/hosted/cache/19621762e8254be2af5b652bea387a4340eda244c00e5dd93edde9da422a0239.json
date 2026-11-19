@@ -1,0 +1,17 @@
+{
+  "purpose": "preflight",
+  "max_tokens": 5,
+  "prompt_sha256": "19621762e8254be2af5b652bea387a4340eda244c00e5dd93edde9da422a0239",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 1,
+  "status": "ok",
+  "elapsed_seconds": 1.4871631897985935,
+  "response_id": "msg_bdrk_gr55w7tgpgbpkeba2k4wrhdmbpjcud7gyxzpltm5r5grummdzjma",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 11,
+  "output_tokens": 5,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "OK."
+}

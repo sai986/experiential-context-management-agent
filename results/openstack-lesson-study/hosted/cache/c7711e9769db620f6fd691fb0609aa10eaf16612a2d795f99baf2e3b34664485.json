@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_delayed_000",
+  "condition": "openstack_transfer",
+  "prompt_sha256": "c7711e9769db620f6fd691fb0609aa10eaf16612a2d795f99baf2e3b34664485",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 9,
+  "status": "ok",
+  "elapsed_seconds": 2.283861480653286,
+  "response_id": "msg_bdrk_rgxk63lo2txqomksategky6itprfpjix6r6glshbtxzg7n6y66oq",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 126,
+  "output_tokens": 114,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Recommendation\n\nUse **PowerShell Core (pwsh.exe)** or **native PowerShell 5.1** for scripting on Windows Server 2019, as bash is unsupported. Execute scripts via `powershell.exe -ExecutionPolicy Bypass -File script.ps1` or schedule them through Task Scheduler for reliable automation without external dependencies.\n\nFor the fastest reliable path, leverage Windows Server 2019's built-in PowerShell capabilities rather than installing additional shells or compatibility layers."
+}

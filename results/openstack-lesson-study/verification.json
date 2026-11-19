@@ -1,0 +1,13 @@
+{
+  "context_metrics_recomputed": true,
+  "hosted_complete": true,
+  "hosted_episodes_checked": 96,
+  "hosted_paired_cases": 24,
+  "hosted_prompts_and_provider_answers_verified": true,
+  "imports_preserve_evidence": true,
+  "offline_episodes_checked": 2592,
+  "offline_grid_complete": true,
+  "source_hashes_verified": true,
+  "valid": true,
+  "verification_implementation_sha256": "f57e7c5d0af8a6bb5a485d3191044fc8cf1264db776560ffe2c5233306f82032"
+}

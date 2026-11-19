@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "openstack",
+  "task_id": "openstack_hard_constraint_027",
+  "condition": "openstack_transfer",
+  "prompt_sha256": "0db41756721c25849a5bcd2507ecf78a17f5d66b355c528cafecfb9004db701e",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 31,
+  "status": "ok",
+  "elapsed_seconds": 2.1565920785069466,
+  "response_id": "msg_bdrk_kwdeup2yl442zsefboz4onglck5eizpzozgqgpinpayrgm2jnnia",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 154,
+  "output_tokens": 121,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Migration Constraint for VM bf8c824d-f099-4433-a41e-e3da7578262e\n\n**Constraint:** Do not use live migration if the host has less than 2GB free RAM available. Instead, perform a cold migration by stopping the VM first before migrating it.\n\n**Recommendation:** Before initiating any migration of this instance, verify the source host has at least 2GB free RAM. If available RAM is below this threshold, execute a cold migration (stop \u2192 migrate) rather than attempting live migration."
+}

@@ -25,7 +25,20 @@ python -m src.experiments.verify_transfer_validation results/transfer-validation
 python -m unittest discover -s tests -v
 ```
 
-See [study results](results/transfer-validation/RESULTS.md) or [offline HTML](results/transfer-validation/RESULTS.html). Existing incident/LogHub result tables below remain historical; the corrected transfer behavior has not been rerun against a hosted model.
+See [study results](results/transfer-validation/RESULTS.md) or [offline HTML](results/transfer-validation/RESULTS.html). Existing incident/LogHub result tables below remain historical. The separate hosted study below now evaluates evidence-preserving imports under a matched compressor.
+
+## Matched hosted lesson study and rule selectivity
+
+The [contribution guide](docs/OPENSTACK_LESSON_STUDY.md) adds a 24-case hosted QGenie/Haiku pilot across OpenStack and synthetic incidents, with four conditions per case, identical compression and frozen lesson stores. On 12 OpenStack cases, its imported rule improves scored success from **3/12 to 7/12**, with **41.7 mean context words** versus **200.1** for full context. The controlled synthetic store reaches **8/12**, using more context. These are small paired-pilot results, distinct from the historical tables below.
+
+A separate 2,592-episode offline experiment exposes the coverage/selectivity trade-off in any-tag retrieval. For the controlled synthetic store, all-tags matching preserves 66.7% exact fact success while reducing mean words from 719.2 to 294.5 with 32 added irrelevant observations. The narrower OpenStack store loses coverage under that restriction. An eight-fixture grader audit and answer-level review retain scoring limitations explicitly.
+
+```bash
+python -m src.experiments.run_openstack_lesson_study --hosted --key-file /tmp/ecm-study-qgenie.key
+python -m src.experiments.verify_openstack_lesson_study
+```
+
+See [measured results](results/openstack-lesson-study/RESULTS.md), [HTML report](results/openstack-lesson-study/RESULTS.html), [figure](results/openstack-lesson-study/rule-selectivity.pdf), and [full-context failure review](results/openstack-lesson-study/FULL_CONTEXT_REVIEW.md). The runner caps inference at 110 requests and 45 minutes, preserves raw log text and provider usage, and resumes from cached responses.
 
 ---
 

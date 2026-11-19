@@ -1,0 +1,123 @@
+[
+  {
+    "content": "CONSTRAINT: Glance image [img-e08748b4] download errors must NOT be treated as Nova scheduler failures. The root cause is in the Glance storage backend, not the nova-scheduler or compute host selection.",
+    "step": 1,
+    "tags": [
+      "critical",
+      "hard_constraint",
+      "negation"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2642100",
+    "step": 2,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2559950",
+    "step": 3,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.compute.resource_tracker] [INFO] Auditing locally available compute resources for node cp-1.slowvm1.tcloud-pg0.utah.cloudlab.us",
+    "step": 4,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.compute.resource_tracker] [INFO] Total usable vcpus: 16, total allocated vcpus: 1",
+    "step": 5,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.compute.resource_tracker] [INFO] Final resource view: name=cp-1.slowvm1.tcloud-pg0.utah.cloudlab.us phys_ram=64172MB used_ram=2560MB phys_disk=15GB used_",
+    "step": 6,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[glance.api.v2.images] [ERROR] Image img-e08748b4 download failed: storage backend timeout req_id=req-e05a2a8a-c500-1e3e-f59d-219410217062",
+    "step": 7,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[glance.store.http] [WARNING] Retrying image img-e08748b4 download (attempt 2) req_id=req-e05a2a8a-c500-1e3e-f59d-219410217062",
+    "step": 8,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [INFO] 10.14.241.140 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-e05a2a8a-c500-1e3e-f59d-219410217062",
+    "step": 9,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [DEBUG] GET /v2.0/ports 200 latency=0.461ms req_id=req-e05a2a8a-c500-1e3e-f59d-219410217062",
+    "step": 10,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[neutron.plugins.ml2.managers] [INFO] Attempting to bind port port-339864aa on host compute-5",
+    "step": 11,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[neutron.agent.linux.iptables_manager] [INFO] Refresh security group rules for instance a8179850-0b45-cb04-e5bc-89c093a69684",
+    "step": 12,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.compute.resource_tracker] [INFO] Compute_service record updated for cp-1.slowvm1.tcloud-pg0.utah.cloudlab.us:cp-1.slowvm1.tcloud-pg0.utah.cloudlab.us",
+    "step": 13,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2706959",
+    "step": 14,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2729750",
+    "step": 15,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2790480",
+    "step": 16,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "Which service is the true root cause, ignoring the nova-scheduler errors?",
+    "step": 17,
+    "tags": [
+      "trigger"
+    ]
+  }
+]

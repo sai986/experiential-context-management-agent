@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_delayed_001",
+  "condition": "full_context",
+  "prompt_sha256": "7f726f18e17800d9275b9b1b2b9e4679ab89fbf8decdb4b115cfc28e9ce0df61",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 56,
+  "status": "ok",
+  "elapsed_seconds": 2.22758948802948,
+  "response_id": "msg_bdrk_or2ft7shrdndjnscurz7hjp4aor3ol5fcpo4jogbj25ppni3icga",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 330,
+  "output_tokens": 102,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Recommendation\n\n**Proceed with the migration immediately.** All system metrics are healthy (CPU 38%, memory 51%, disk I/O 12%, cache hit ratio 0.91, GC pause 18ms, latency 142ms baseline), infrastructure is stable (backup complete, TLS renewed, all pods healthy), and the read-only replica mode is already active\u2014this is the optimal window to execute the migration without performance risk or data consistency concerns."
+}

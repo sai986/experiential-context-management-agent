@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_hard_000",
+  "condition": "full_context",
+  "prompt_sha256": "8b415c28c9f333782bbaa591005275f507ecdbed60d171c1b360d2eab2aa92ea",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 32,
+  "status": "ok",
+  "elapsed_seconds": 2.83643876388669,
+  "response_id": "msg_bdrk_k6bnuyb36wrc7lhx67y6xtbmfnyb2mse5k67ltod4ztzrw4bvgsa",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 344,
+  "output_tokens": 156,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Architecture Recommendation\n\n**Deploy a self-contained, containerized microservices architecture using Kubernetes (or Docker Compose for simpler deployments) with all models, data, and dependencies bundled locally.** Implement an internal service mesh for inter-service communication, local caching (leveraging the observed 0.91 cache hit ratio), and embedded inference engines rather than external APIs. This approach satisfies the offline-first constraint [ctx_0001], aligns with the team's deployment tool experience [ctx_0002], remains maintainable [ctx_0004], and the current system health metrics [ctx_0006\u2013ctx_0013] demonstrate this architecture can operate stably at modest resource utilization."
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "content": "CONSTRAINT: Neutron network [port: port-76e14790] requires security group rule sync before VM instance [be793e89-2cc3-4f99-9884-9c6a624a84bc] becomes reachable. iptables rules must be flushed and re-applied before marking the VM ready.",
+    "step": 1,
+    "tags": [
+      "critical",
+      "hard_constraint"
+    ]
+  },
+  {
+    "content": "[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /openstack/2013-10-17/user_data HTTP/1.1' status: 404 len: 176 time: 0.2108901",
+    "step": 2,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /openstack/2013-10-17/meta_data.json HTTP/1.1' status: 200 len: 967 time: 0.0013261",
+    "step": 3,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /openstack/2013-10-17/meta_data.json HTTP/1.1' status: 200 len: 967 time: 0.0008872",
+    "step": 4,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'DELETE /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/be793e89-2cc3-4f99-9884-9c6a624a84bc HTTP/1.1' status: 2",
+    "step": 5,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Terminating instance",
+    "step": 6,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-76e14790 req_id=req-eb59003a-53bc-0611-9af4-ab8a8908d3f9",
+    "step": 7,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[neutron.agent.linux.iptables_manager] [INFO] Refresh security group rules for instance be793e89-2cc3-4f99-9884-9c6a624a84bc",
+    "step": 8,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[keystone.token.provider] [WARNING] Token validation failed for user user-06e0fc6b: expired req_id=req-eb59003a-53bc-0611-9af4-ab8a8908d3f9",
+    "step": 9,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[cinder.api.v2.volumes] [INFO] Creating volume size=20 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc req_id=req-eb59003a-53bc-0611-9af4-ab8a8908d3f9",
+    "step": 10,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-27e493fb req_id=req-eb59003a-53bc-0611-9af4-ab8a8908d3f9",
+    "step": 11,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [INFO] 10.10.93.228 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-eb59003a-53bc-0611-9af4-ab8a8908d3f9",
+    "step": 12,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /latest/meta-data/ HTTP/1.1' status: 200 len: 328 time: 0.2276061",
+    "step": 13,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.driver] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Instance destroyed successfully.",
+    "step": 14,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1916 time: 0.2693460",
+    "step": 15,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.driver] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Deleting instance files /var/lib/nova/instances/be793e89-2cc3-4f99-9884",
+    "step": 16,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "What network prerequisite must be satisfied before this VM becomes reachable?",
+    "step": 17,
+    "tags": [
+      "trigger"
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "purpose": "investigation",
+  "max_tokens": 2048,
+  "task_id": "openstack_synonym_match_026",
+  "dataset": "openstack",
+  "prompt_sha256": "db68fc87c34c4e4f7a2a11fa94c7a9d9ab6182ee322b14f459f9af99c43e8b9d",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 44,
+  "status": "ok",
+  "elapsed_seconds": 2.3276134058833122,
+  "response_id": "msg_bdrk_ftoz7vtox4xtz24d6j63fr2eciuwtll3ja7ti63dfe3sdfgy6mbq",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 1135,
+  "output_tokens": 316,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "```json\n[\n  {\"line\": 1, \"tags\": [\"critical\", \"hard_constraint\"]},\n  {\"line\": 2, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 3, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 4, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 5, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 6, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 7, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 8, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 9, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 10, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 11, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 12, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 13, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 14, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 15, \"tags\": [\"distractor\", \"info\"]},\n  {\"line\": 16, \"tags\": [\"distractor\", \"info\"]}\n]\n```"
+}

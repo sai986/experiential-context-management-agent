@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_distractor_000",
+  "condition": "synthetic_transfer",
+  "prompt_sha256": "0c7eccd4634b6b617f840e54b0b38cd3d03c67d5dc94e94c09be4dc1110d132d",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 27,
+  "status": "ok",
+  "elapsed_seconds": 2.0283273980021477,
+  "response_id": "msg_bdrk_qleg36jm5yrdbavais567doyhkr2m4xrr4djdhcjhjz6yi5q7boq",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 153,
+  "output_tokens": 60,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Deployment Recommendation\n\nDeploy to the staging environment only, following your standard deployment pipeline. This satisfies the critical constraint while allowing the stakeholder to proceed quickly through validation and testing before any future production consideration. Ensure staging mirrors production configuration so findings are reliable for subsequent decisions."
+}

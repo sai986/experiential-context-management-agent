@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_hard_000",
+  "condition": "synthetic_transfer",
+  "prompt_sha256": "9a21037516a0893c21af78976fab60c4b3498c2cf08c7a58a4576f14c6b3dd11",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 35,
+  "status": "ok",
+  "elapsed_seconds": 2.4134752936661243,
+  "response_id": "msg_bdrk_uzmbsnnmw3fjegirqemyqfe6f2nquaoqlzudrhiwdmcrvtdy6n2q",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 170,
+  "output_tokens": 131,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Architecture Recommendation\n\n**Deploy a self-contained, on-premise solution using a local LLM (e.g., Ollama, LM Studio, or similar) paired with a lightweight vector database (e.g., Milvus, Weaviate, or SQLite with embeddings) running on the organization's infrastructure.** This eliminates all cloud dependencies while remaining maintainable through containerization (Docker) and standard DevOps practices. **Couple this with a REST API layer for application integration, ensuring the team can leverage their existing deployment experience while meeting the offline-first requirement.**"
+}

@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_delayed_001",
+  "condition": "synthetic_transfer",
+  "prompt_sha256": "be170b0d510da372c83396fce9cdc63dd12a7275a7fa324630bdd69a029ba10f",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 59,
+  "status": "ok",
+  "elapsed_seconds": 2.2375449165701866,
+  "response_id": "msg_bdrk_u535odldzspalkcerao37b5dmdnkdtzxc2aoy5o3kkwfipnxwvwq",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 155,
+  "output_tokens": 87,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Recommendation\n\n**Execute the migration during the read-only replica window using a staged approach:** (1) Validate data consistency on the replica without write operations, (2) prepare rollback scripts in parallel, (3) execute the cutover in the shortest maintenance window possible to minimize downtime. This balances speed with reliability by leveraging the existing replica state and avoiding the failed approaches from previous attempts."
+}

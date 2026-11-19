@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_delayed_000",
+  "condition": "synthetic_transfer",
+  "prompt_sha256": "7e4a21134fd352996524a90f4fc76d74f170e52f922999bcef49a24b19cde523",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 10,
+  "status": "ok",
+  "elapsed_seconds": 2.2849374301731586,
+  "response_id": "msg_bdrk_x5ztqtxdc23itaitn7opom66p4depudnzfrjnt5nuzwanisrj3fa",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 160,
+  "output_tokens": 82,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Recommendation\n\nUse **PowerShell Core or PowerShell 5.1** (native to Windows Server 2019) to create and execute your automation scripts, avoiding bash entirely. Structure your solution using PowerShell modules and cmdlets aligned with your technical review findings, ensuring compatibility with Windows Server 2019's native tooling for the fastest, most reliable deployment path."
+}

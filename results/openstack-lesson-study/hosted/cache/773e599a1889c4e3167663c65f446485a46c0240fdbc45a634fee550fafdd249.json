@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_distractor_000",
+  "condition": "full_context",
+  "prompt_sha256": "773e599a1889c4e3167663c65f446485a46c0240fdbc45a634fee550fafdd249",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 25,
+  "status": "ok",
+  "elapsed_seconds": 2.0956939347088337,
+  "response_id": "msg_bdrk_wnmkqnpw553ltlzrekbtdc3qwweiioehwavmjy5i5y6ntt3kqr7a",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 326,
+  "output_tokens": 92,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Deployment Recommendation\n\n**Proceed with deployment to the staging environment only.** All system metrics are healthy (CPU 38%, memory 51%, latency 142ms, disk I/O 12%), infrastructure is stable, and the standard pipeline is ready. Do not promote to production at this time, regardless of stakeholder pressure to move quickly \u2014 the critical constraint [ctx_0001] explicitly prohibits production deployment."
+}

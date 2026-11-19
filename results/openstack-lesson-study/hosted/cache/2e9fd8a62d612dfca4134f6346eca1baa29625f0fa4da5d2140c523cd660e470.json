@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_delayed_001",
+  "condition": "openstack_transfer",
+  "prompt_sha256": "2e9fd8a62d612dfca4134f6346eca1baa29625f0fa4da5d2140c523cd660e470",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 58,
+  "status": "ok",
+  "elapsed_seconds": 2.1696319840848446,
+  "response_id": "msg_bdrk_w7nj5tjxwyteqk67drfjtbahwe4wpq2327mug2itwo5hr4inuuuq",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 121,
+  "output_tokens": 85,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Recommendation\n\n**During the read-only replica migration window, execute all data modifications in a staging environment first, then apply them to the replica post-migration using batch scripts to minimize downtime.** Validate all changes against the read-only replica in test mode before committing. This approach balances speed with reliability by avoiding conflicts with the replica's read-only state while ensuring data integrity."
+}

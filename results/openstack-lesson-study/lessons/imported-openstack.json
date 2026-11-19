@@ -1,0 +1,18 @@
+[
+  {
+    "lesson_id": "lesson_0001",
+    "lesson_type": "compression_safety",
+    "operation": "COMPRESS",
+    "trigger_tags": [
+      "critical",
+      "hard_constraint"
+    ],
+    "instruction": "Preserve critical constraints, negations, exact values, and delayed dependencies verbatim during compression.",
+    "supporting_decision_id": "dec_0002",
+    "original_score": 0.0,
+    "counterfactual_score": 1.0,
+    "source_agent": "agent_a",
+    "support_count": 13,
+    "status": "transferable"
+  }
+]

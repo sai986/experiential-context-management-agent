@@ -1,0 +1,123 @@
+[
+  {
+    "content": "CONSTRAINT: Nova compute [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] VM migrations must NOT use live migration when host has less than 2GB free RAM. Always perform a cold migration: stop the VM first, then migrate.",
+    "step": 1,
+    "tags": [
+      "critical",
+      "hard_constraint",
+      "negation"
+    ]
+  },
+  {
+    "content": "[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] VM Resumed (Lifecycle Event)",
+    "step": 2,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Took 19.97 seconds to build instance.",
+    "step": 3,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1910 time: 0.2641079",
+    "step": 4,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1910 time: 0.2763309",
+    "step": 5,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): ",
+    "step": 6,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [INFO] 10.5.211.30 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-2fd1843d-9207-1602-161c-d6742978868d",
+    "step": 7,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.scheduler.manager] [DEBUG] Selected host compute-5 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc",
+    "step": 8,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[keystone.token.provider] [WARNING] Token validation failed for user user-4a1dc6c7: expired req_id=req-2fd1843d-9207-1602-161c-d6742978868d",
+    "step": 9,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[cinder.api.v2.volumes] [INFO] Creating volume size=20 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc req_id=req-2fd1843d-9207-1602-161c-d6742978868d",
+    "step": 10,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-a3d63e4f req_id=req-2fd1843d-9207-1602-161c-d6742978868d",
+    "step": 11,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [INFO] 10.11.115.212 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-2fd1843d-9207-1602-161c-d6742978868d",
+    "step": 12,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): ",
+    "step": 13,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+    "step": 14,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /openstack/2012-08-10/meta_data.json HTTP/1.1' status: 200 len: 264 time: 0.2397351",
+    "step": 15,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.metadata.wsgi.server] [INFO] 10.11.21.137,10.11.10.1 'GET /openstack/2013-10-17 HTTP/1.1' status: 200 len: 157 time: 0.0005910",
+    "step": 16,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "What constraint must be respected when migrating this VM?",
+    "step": 17,
+    "tags": [
+      "trigger"
+    ]
+  }
+]

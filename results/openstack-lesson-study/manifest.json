@@ -1,0 +1,42 @@
+{
+  "conditions": [
+    "full_context",
+    "empty_store",
+    "openstack_transfer",
+    "synthetic_transfer"
+  ],
+  "hosted_cases_per_dataset": 12,
+  "lesson_stores_frozen": true,
+  "limitations": [
+    "Small paired pilot; no significance or universal-transfer claim.",
+    "Source stores differ in rule counts/tag coverage.",
+    "OpenStack is LogHub-derived with authored constraints and log additions.",
+    "Synthetic incidents have predefined observations; OpenStack tags are model-assigned.",
+    "Shared synthetic templates; these are additional probes, not a new production dataset."
+  ],
+  "noise_levels": [
+    0,
+    8,
+    32
+  ],
+  "protocol_version": 1,
+  "selected_cases_sha256": "3e21ac5dd71f229dfaaadf8ca33be2a93d5101f94b92c4c16b0591901a800318",
+  "selection": "First two incident IDs per family; round-robin family/rank/dataset order.",
+  "shared_compressor": "first seven whitespace words",
+  "source_revision": "56fcd13bc8778f71f6555c1d1b893e0fd5ff4c25",
+  "source_sha256": {
+    "data/openstack/test.jsonl": "1bb2ac31e73b48fb726d2c602ed8a7d05021659e44dd37f5c271f923a2686833",
+    "results/openstack/real/processed/summary.json": "b7a2a3f28292366aae1489ce65913f634a740971017319ac037e094bccb7240a",
+    "results/transfer-validation/seed-19/data/test.jsonl": "eb69d2ab42211961df2f125e8060f84b5272449041d786fc97b79f37815a98fc",
+    "results/transfer-validation/seed-41/data/test.jsonl": "b21a589694677764e318077542af3974f1bc80edd53157566b29369e94b934b8",
+    "results/transfer-validation/seed-7/data/test.jsonl": "a629d0201ff4febe6096c1fe4eb97ca058ff59391af90de44aeaf9247624f368",
+    "results/transfer-validation/seed-7/lessons/agent-a.json": "923a2f23ea79b04f46079553b0193a48c5c3bac1fdc241a40b2c67bb6ecd866b",
+    "src/context/manager.py": "de7a8273185c7c4479cea69d72cb03f8d92091246b3552a14a43cbf56191bfdb",
+    "src/environment/evaluator.py": "39e568edbc6247d353b3fe68571e11b7f4c3872f15e61d33629de1ff04b4fb2d",
+    "src/environment/task_generator_incident.py": "9a9556459dc6e695852f51c5f093bc9cce0fe112edc5a2f3788a5fa1d0195d79",
+    "src/experiments/lesson_study_client.py": "f4cf9c11e6f77ff905bc18a04e81bd1c4ac3ec26a4aa9136f42d77b651ccccb7",
+    "src/experiments/run_openstack_lesson_study.py": "efdd2784da2ac75efb265b263cc138cc9084f02821241ceeb084d00dd665ec4c",
+    "src/lessons/lesson_store.py": "5ae39b63a2d133c29866e20428107eb9980fb0c85536d5e1f31e912604315238"
+  },
+  "synthetic_store_source": "Previously verified deterministic fact-retention seed-7 study."
+}

@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_negation_000",
+  "condition": "empty_store",
+  "prompt_sha256": "d92e395e3ee1629820167e5afdc7c9a50312e8067515c4de4ac16292d8840f60",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 41,
+  "status": "ok",
+  "elapsed_seconds": 2.2439255341887474,
+  "response_id": "msg_bdrk_2s7mwk2sczca4vuycoqvfuucajpliwhcv6wufl77qr5hl76evv6a",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 128,
+  "output_tokens": 85,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Recommendation\n\nBased on the constraints, implement a **stateless, privacy-first architecture** that processes user requests without persisting personal data, instead generating audit logs that record only actions and timestamps without storing identifiable information. This approach satisfies the non-storage requirement while maintaining the clean, auditable trail the user requires through immutable event logging that references only anonymized identifiers or session tokens."
+}

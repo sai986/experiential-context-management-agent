@@ -1,0 +1,122 @@
+[
+  {
+    "content": "CONSTRAINT: OpenStack VM launch sequence for instance [be793e89-2cc3-4f99-9884-9c6a624a84bc] must follow: Step 1 Keystone auth, Step 2 Nova schedule, Step 3 Neutron port allocation, Step 4 Cinder volume attach.",
+    "step": 1,
+    "tags": [
+      "critical",
+      "hard_constraint"
+    ]
+  },
+  {
+    "content": "[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-11eb0f84",
+    "step": 2,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1874 time: 0.1886330",
+    "step": 3,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] Took 0.46 seconds to deallocate network for instance.",
+    "step": 4,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [WARNING] Unknown base file: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+    "step": 5,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.scheduler.manager] [DEBUG] Selected host compute-4 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc",
+    "step": 6,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [INFO] 10.8.181.216 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-c2978392-5c80-7220-1f77-765f2e5ce13a",
+    "step": 7,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[keystone.token.provider] [WARNING] Token validation failed for user user-99aea9fe: expired req_id=req-c2978392-5c80-7220-1f77-765f2e5ce13a",
+    "step": 8,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[cinder.api.v2.volumes] [INFO] Creating volume size=20 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc req_id=req-c2978392-5c80-7220-1f77-765f2e5ce13a",
+    "step": 9,
+    "tags": [
+      "info"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-a7a48a3b req_id=req-c2978392-5c80-7220-1f77-765f2e5ce13a",
+    "step": 10,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] Removable base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+    "step": 11,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] Removing base or swap file: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+    "step": 12,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 211 time: 0.0931380",
+    "step": 13,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.api.openstack.wsgi] [INFO] HTTP exception thrown: No instances found for any event",
+    "step": 14,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'POST /v2/e9746973ac574c6b8a9e8857f56a7608/os-server-external-events HTTP/1.1' status: 404 len: 296 time: 0.0",
+    "step": 15,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'POST /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers HTTP/1.1' status: 202 len: 733 time: 0.4657719",
+    "step": 16,
+    "tags": [
+      "distractor"
+    ]
+  },
+  {
+    "content": "List all OpenStack services that must complete successfully in order.",
+    "step": 17,
+    "tags": [
+      "trigger"
+    ]
+  }
+]

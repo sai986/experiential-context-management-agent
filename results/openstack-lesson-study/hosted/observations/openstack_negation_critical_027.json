@@ -1,0 +1,138 @@
+[
+  {
+    "content": "CONSTRAINT: Keystone token validation failures for user [user-7c29ca3c] must NOT be auto-renewed without explicit user re-authentication. Automatic token refresh is prohibited \u2014 the user must manually re-authenticate.",
+    "step": 1,
+    "tags": [
+      "critical",
+      "hard_constraint",
+      "negation"
+    ]
+  },
+  {
+    "content": "[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] VM Paused (Lifecycle Event)",
+    "step": 2,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.compute.manager] [INFO] [instance: be793e89-2cc3-4f99-9884-9c6a624a84bc] During sync_power_state the instance has a pending task (spawning). Ski",
+    "step": 3,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2741919",
+    "step": 4,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): ",
+    "step": 5,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): ",
+    "step": 6,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[keystone.token.provider] [WARNING] Token validation failed for user user-7c29ca3c: expired req_id=req-93b78bab-3815-1095-648e-85ebd1c1a2db",
+    "step": 7,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[keystone.middleware.auth_token] [INFO] Starting Keystone authentication for user user-7c29ca3c",
+    "step": 8,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[keystone.token.provider] [WARNING] Token validation failed for user user-cdb8e4ff: expired req_id=req-93b78bab-3815-1095-648e-85ebd1c1a2db",
+    "step": 9,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[cinder.api.v2.volumes] [INFO] Creating volume size=20 for instance be793e89-2cc3-4f99-9884-9c6a624a84bc req_id=req-93b78bab-3815-1095-648e-85ebd1c1a2db",
+    "step": 10,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [WARNING] security group rule sync pending for port port-12b8c36e req_id=req-93b78bab-3815-1095-648e-85ebd1c1a2db",
+    "step": 11,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[neutron.wsgi.server] [INFO] 10.15.163.90 POST /v2.0/ports HTTP/1.1 status: 201 req_id=req-93b78bab-3815-1095-648e-85ebd1c1a2db",
+    "step": 12,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2659979",
+    "step": 13,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.virt.libvirt.imagecache] [INFO] Active base files: /var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742",
+    "step": 14,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.2558751",
+    "step": 15,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "[nova.osapi_compute.wsgi.server] [INFO] 10.11.10.1 'GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1' status: 200 len: 1893 time: 0.3656721",
+    "step": 16,
+    "tags": [
+      "distractor",
+      "info"
+    ]
+  },
+  {
+    "content": "What action is explicitly prohibited for this token/auth failure?",
+    "step": 17,
+    "tags": [
+      "trigger"
+    ]
+  }
+]

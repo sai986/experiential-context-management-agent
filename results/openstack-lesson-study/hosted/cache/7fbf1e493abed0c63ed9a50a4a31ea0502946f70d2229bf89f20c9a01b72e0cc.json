@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "synthetic_incident",
+  "task_id": "inc_delayed_000",
+  "condition": "empty_store",
+  "prompt_sha256": "7fbf1e493abed0c63ed9a50a4a31ea0502946f70d2229bf89f20c9a01b72e0cc",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 8,
+  "status": "ok",
+  "elapsed_seconds": 3.0101321451365948,
+  "response_id": "msg_bdrk_oceytn7c74jobp6jgtvt6svyqslvlovl6b6ylj4egdyxp3lz6lra",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 118,
+  "output_tokens": 134,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Recommendation\n\nI don't have sufficient context to provide a specific procedure, as the earlier constraints and the actual task objective are not included in the provided context. To give you a concrete step-by-step procedure for Windows Server 2019 that prioritizes speed and reliability, please clarify:\n\n1. **What is the specific task?** (e.g., deployment, configuration, troubleshooting, migration)\n2. **What are the earlier constraints mentioned in ctx_0013?**\n\nOnce you provide these details, I can deliver a focused, actionable procedure optimized for Windows Server 2019."
+}

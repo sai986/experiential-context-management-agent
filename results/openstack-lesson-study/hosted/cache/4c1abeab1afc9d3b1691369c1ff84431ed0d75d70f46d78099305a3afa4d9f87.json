@@ -1,0 +1,20 @@
+{
+  "purpose": "task",
+  "max_tokens": 512,
+  "dataset": "openstack",
+  "task_id": "openstack_hard_constraint_027",
+  "condition": "full_context",
+  "prompt_sha256": "4c1abeab1afc9d3b1691369c1ff84431ed0d75d70f46d78099305a3afa4d9f87",
+  "model": "claude-haiku-4-5-20251001",
+  "temperature": 0.0,
+  "attempt": 29,
+  "status": "ok",
+  "elapsed_seconds": 2.2393446564674377,
+  "response_id": "msg_bdrk_hc4nuwzhetdzu3szow64rutvbbjy5dgouw3cgez64ca2snwoa6kq",
+  "response_model": "anthropic.claude-haiku-4-5-20251001-v1:0",
+  "input_tokens": 1058,
+  "output_tokens": 115,
+  "cache_read_input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "text": "# Migration Constraint for Instance bf8c824d-f099-4433-a41e-e3da7578262e\n\n**Constraint:** Cold migration must be used when the host has less than 2GB free RAM available. Live migration is prohibited under this condition.\n\n**Recommendation:** Before initiating any VM migration, verify the target host has at least 2GB of free RAM. If free RAM falls below this threshold, stop the instance first, then perform a cold migration to ensure compliance with the operational constraint."
+}
